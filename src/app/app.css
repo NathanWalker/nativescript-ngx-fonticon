@@ -1,0 +1,9 @@
+﻿Label {
+  padding:10;
+  horizontal-align: center;
+}
+
+.fa {
+  font-family: FontAwesome;
+  font-size:60;
+}
