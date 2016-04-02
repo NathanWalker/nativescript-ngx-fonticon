@@ -4,10 +4,6 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Dependency Status](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon-pipe/status.svg)](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon-pipe#info=dependencies) [![devDependency Status](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon-pipe/dev-status.svg)](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon-pipe#info=devDependencies)
 
-| ![Demo](/resources/demo.png) |
-| :---: |
-| Font Awesome icon being used by name instead of unicode. |
-
 ### The Problem
 
 You can use icon fonts with NativeScript by combining a class with a unicode reference in the view:
