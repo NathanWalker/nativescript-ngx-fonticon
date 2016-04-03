@@ -17,8 +17,11 @@ export class TNSFontIconPipe implements PipeTransform, OnDestroy {
     let collectionName: string;
 
     if (args.length && args[0] !== null) {
-      collectionName = args[0];      
-    } else {
+      collectionName = args[0];
+    } else if (className && className.indexOf('-') > -1) {
+      // derive from classname
+      collectionName = className.split('-')[0];
+    } else {      
       // font collection name is required
       return this.value;
     }

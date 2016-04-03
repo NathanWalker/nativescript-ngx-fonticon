@@ -1,8 +1,8 @@
-## A simpler way to use font icons with NativeScript
+## A simpler way to use font icons with NativeScript + Angular2.
 
 [![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
-[![Dependency Status](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon-pipe/status.svg)](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon-pipe#info=dependencies) [![devDependency Status](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon-pipe/dev-status.svg)](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon-pipe#info=devDependencies)
+[![Dependency Status](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon/status.svg)](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon#info=dependencies) [![devDependency Status](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon/dev-status.svg)](https://david-dm.org/NathanWalker/nativescript-ng2-fonticon#info=devDependencies)
 
 ### The Problem
 
@@ -27,13 +27,13 @@ This works but keeping up with unicodes is not fun.
 With this plugin, you can instead reference the `fonticon` by the specific classname:
 
 ```
-<Label class="fa" [text]="'fa-bluetooth' | fonticon:'fa'"></Label> 
+<Label class="fa" [text]="'fa-bluetooth' | fonticon"></Label> 
 ```
 
 ## Install
 
 ```
-npm install nativescript-ng2-fonticon-pipe --save
+npm install nativescript-ng2-fonticon --save
 ```
 
 ### Usage
@@ -50,17 +50,23 @@ app/fonts/fontawesome-webfont.ttf
 
 ```
 .fa {
-  font-family: FontAwesome;
+  font-family: FontAwesome, fontawesome-webfont;
 }
 ```
 
-* Copy custom font `.css` to `app` somewhere, for example:
+**NOTE**: Android uses the name of the file for the font-family (In this case, `fontawesome-webfont`.ttf. iOS uses the actual name of the font; for example, as found [here](https://github.com/FortAwesome/Font-Awesome/blob/master/css/font-awesome.css#L8). You could rename the font filename to `FontAwesome.ttf` to use just: `font-family: FontAwesome`. You can [learn more here](http://fluentreports.com/blog/?p=176).
+
+* Copy css to `app` somewhere, for example:
 
 ```
 app/font-awesome.css
 ```
 
+Then modify the css file to isolate just the icon fonts needed. [Watch this video to better understand](https://www.youtube.com/watch?v=qb2sk0XXQDw).
+
 * Configure the service with the location to the `.css` file:
+
+Use the classname prefix as the `key` and the css filename as the value relative to the `app` directory.
 
 ```
 nativeScriptBootstrap(DemoComponent, [
@@ -90,11 +96,33 @@ nativeScriptBootstrap(DemoComponent, [
 ]);
 ```
 
-5. Use the Pipe, for example:
+* Use the Pipe, for example:
 
 ```
-<Label class="fa" [text]="'fa-bluetooth' | fonticon:'fa'"></Label> 
+<Label class="fa" [text]="'fa-bluetooth' | fonticon"></Label> 
 ``` 
+
+#### Configuration *Options*
+
+If your font collection name does not match the classname prefix, you can pass the font collection name as an argument to the pipe like this:
+
+```
+<Label class="fa" [text]="'fa-bluetooth' | fonticon:'fontawesome'"></Label> 
+```
+
+With a configuration like this:
+
+```
+nativeScriptBootstrap(DemoComponent, [
+  provide(TNSFontIconService, {
+    useFactory: () => {
+      return new TNSFontIconService({
+        'fontawesome': 'font-awesome.css'
+      });
+    }
+  })
+]);
+```
 
 Demo FontAwesome (iOS) |  Demo Ionicons (iOS)
 -------- | ---------
@@ -112,6 +140,16 @@ iOS uses classes prefixed with `NS` (stemming from the [NeXTSTEP](https://en.wik
 https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/
 
 To avoid confusion with iOS native classes, `TNS` is used instead.
+
+## How about just NativeScript without Angular?
+
+The standard NativeScript converter is here:
+
+* [nativescript-fonticon](https://github.com/NathanWalker/nativescript-fonticon)
+
+## Credits
+
+Idea came from [Bradley Gore](https://github.com/bradleygore)'s [post here](http://www.blog.bradleygore.com/2016/03/28/font-icons-in-nativescript/).
 
 ## Contributors
 
