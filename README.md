@@ -132,6 +132,12 @@ Demo FontAwesome (Android) |  Demo Ionicons (Android)
 -------- | -------
 ![Sample3](https://cdn.filestackcontent.com/lNCptx2aQisOa6p27iqb?v=0) | ![Sample4](https://cdn.filestackcontent.com/2ajSF92uQDusI37fEvQA?v=0)
 
+## How about just NativeScript without Angular?
+
+The standard NativeScript converter is here:
+
+* [nativescript-fonticon](https://github.com/NathanWalker/nativescript-fonticon)
+
 ## Why the TNS prefixed name?
 
 `TNS` stands for **T**elerik **N**ative**S**cript
@@ -140,12 +146,6 @@ iOS uses classes prefixed with `NS` (stemming from the [NeXTSTEP](https://en.wik
 https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/
 
 To avoid confusion with iOS native classes, `TNS` is used instead.
-
-## How about just NativeScript without Angular?
-
-The standard NativeScript converter is here:
-
-* [nativescript-fonticon](https://github.com/NathanWalker/nativescript-fonticon)
 
 ## Credits
 
