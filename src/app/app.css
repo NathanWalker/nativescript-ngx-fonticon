@@ -7,3 +7,12 @@
   font-family: FontAwesome, fontawesome-webfont;
   font-size:60;
 }
+
+.ion {
+  font-family: Ionicons, ionicons;
+  font-size:60;
+}
+
+GridLayout {
+  padding-bottom: 50;
+}

@@ -5,8 +5,8 @@
   "main": "nativescript-ng2-fonticon.js",
 	"nativescript": {
 		"platforms": {
-			"android": "1.7.0",
-      "ios": "1.7.0"
+			"android": "1.7.1",
+      "ios": "1.7.1"
 		}
 	},
   "repository": {
@@ -22,6 +22,13 @@
     "font"
   ],
   "author": "Nathan Walker <walkerrunpdx@gmail.com>",
+  "contributors": [
+    {
+      "name": "Nathanael Anderson",
+      "email": "nathan@master-technology",
+      "url": "https://github.com/nathanaela"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/NathanWalker/nativescript-ng2-fonticon/issues"

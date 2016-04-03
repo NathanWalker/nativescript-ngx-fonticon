@@ -1,9 +1,6 @@
 import {Pipe, PipeTransform, OnDestroy, ChangeDetectorRef} from 'angular2/core';
 import {isPresent} from "angular2/src/facade/lang";
 
-// libs
-import {Observable} from 'rxjs/Observable';
-
 import {TNSFontIconService} from '../services/fonticon.service';
 
 @Pipe({
@@ -29,9 +26,11 @@ export class TNSFontIconPipe implements PipeTransform, OnDestroy {
     // if there is a subscription to iconSub, clean it
     this._dispose();
 
-    this.iconSub = this.fonticon.getCss(collectionName).subscribe((data: any) => {
-      this.value = data[className];
-      this._ref.markForCheck();
+    this.iconSub = this.fonticon.filesLoaded.subscribe((data: any) => {
+      if (data[collectionName] && data[collectionName][className]) {
+        this.value = data[collectionName][className];
+        this._ref.markForCheck();
+      }
     });
 
     return this.value;    

@@ -40,13 +40,13 @@ npm install nativescript-ng2-fonticon-pipe --save
 
 [FontAwesome](https://fortawesome.github.io/Font-Awesome/) will be used in the following examples but you can use any custom font icon collection.
 
-1. Place font icon `.ttf` file in `app/fonts`, for example:
+* Place font icon `.ttf` file in `app/fonts`, for example:
   
 ```
 app/fonts/fontawesome-webfont.ttf
 ```
 
-2. Create base class in `app.css` global file, for example:
+* Create base class in `app.css` global file, for example:
 
 ```
 .fa {
@@ -54,13 +54,13 @@ app/fonts/fontawesome-webfont.ttf
 }
 ```
 
-3. Copy custom font `.css` to `app` somewhere, for example:
+* Copy custom font `.css` to `app` somewhere, for example:
 
 ```
 app/font-awesome.css
 ```
 
-4. Configure the service with the location to the `.css` file:
+* Configure the service with the location to the `.css` file:
 
 ```
 nativeScriptBootstrap(DemoComponent, [
@@ -74,11 +74,35 @@ nativeScriptBootstrap(DemoComponent, [
 ]);
 ```
 
+* *Optional* Configure the service with DEBUGGING on
+
+When working with a new font collection, you may need to see the mapping the service provides. Passing `true` as seen below will cause the mapping to be output in the console to determine if your font collection is being setup correctly.
+
+```
+nativeScriptBootstrap(DemoComponent, [
+  provide(TNSFontIconService, {
+    useFactory: () => {
+      return new TNSFontIconService({
+        'fa': 'font-awesome.css'
+      }, true);  <--- pass true to turn debug mode on
+    }
+  })
+]);
+```
+
 5. Use the Pipe, for example:
 
 ```
 <Label class="fa" [text]="'fa-bluetooth' | fonticon:'fa'"></Label> 
 ``` 
+
+Demo FontAwesome (iOS) |  Demo Ionicons (iOS)
+-------- | ---------
+![Sample1](https://cdn.filestackcontent.com/m6JyRO1fTsCHPohoZi5I?v=0) | ![Sample2](https://cdn.filestackcontent.com/jje2pehCRCeLDC8QHBmp?v=0)
+
+Demo FontAwesome (Android) |  Demo Ionicons (Android)
+-------- | -------
+![Sample3](https://cdn.filestackcontent.com/lNCptx2aQisOa6p27iqb?v=0) | ![Sample4](https://cdn.filestackcontent.com/2ajSF92uQDusI37fEvQA?v=0)
 
 ## Why the TNS prefixed name?
 
@@ -88,6 +112,10 @@ iOS uses classes prefixed with `NS` (stemming from the [NeXTSTEP](https://en.wik
 https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/
 
 To avoid confusion with iOS native classes, `TNS` is used instead.
+
+## Contributors
+
+- [NathanaelA](https://github.com/NathanaelA)
 
 # License
 
