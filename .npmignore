@@ -19,11 +19,6 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directory
-# Commenting this out is preferred by some people, see
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
-node_modules
-
 # Users Environment Variables
 .lock-wscript
 .tsdrc
@@ -31,22 +26,27 @@ node_modules
 #IntelliJ configuration files
 .idea
 
+node_modules
 dist
 dev
 docs
 doc
 lib
 test
+src
+src/package.json
+src/app/app*
+src/app/App_Resources
+src/app/fonts
+src/app/package.json
+src/hooks
+src/platforms
 
 Thumbs.db
 .DS_Store
+*.ts
 *.yml
-src/*
-src/package.json
-src/app/App_Resources
-src/app/app.*
-src/app/assets
-src/app/package.json
+!src/app/pipes/*
 !src/app/services/*
 *.spec.*
 *.e2e.*
@@ -64,3 +64,4 @@ typings
 .editorconfig
 *.png
 resources
+*.css
