@@ -57,6 +57,7 @@ __build__/**
 *.d.ts
 *.js
 *.js.map
+*.d.ts
 !*.e2e.js
 !karma*.js
 !test-main.js

@@ -16,7 +16,7 @@ export class TNSFontIconPipe implements PipeTransform, OnDestroy {
   transform(className: string, args: any[]) {
     let collectionName: string;
 
-    if (args.length && args[0] !== null) {
+    if (args && args.length && args[0] !== null) {
       collectionName = args[0];
     } else if (className && className.indexOf('-') > -1) {
       // derive from classname

@@ -10,7 +10,7 @@
   },
   "files": [
     "typings/browser.d.ts",
-    "node_modules/tns-core-modules/file-system/file-system.d.ts",
+    "src/node_modules/tns-core-modules/file-system/file-system.d.ts",
     "nativescript-ng2-fonticon.ts"
   ],
   "compileOnSave": false,

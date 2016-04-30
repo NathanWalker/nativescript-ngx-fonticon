@@ -64,6 +64,26 @@ app/font-awesome.css
 
 Then modify the css file to isolate just the icon fonts needed. [Watch this video to better understand](https://www.youtube.com/watch?v=qb2sk0XXQDw).
 
+* Setup your component
+
+Add Pipe and it is important to inject the service into the constructor. Otherwise Angular 2's DI system will not instantiate your service.
+
+```
+import {Component} from 'angular2/core';
+import {TNSFontIconService, TNSFontIconPipe} from 'nativescript-ng2-fonticon';
+
+@Component({
+  selector: 'demo',
+  template: '<Label class="fa" [text]="'fa-bluetooth' | fonticon"></Label> ',
+  pipes: [TNSFontIconPipe]
+})
+export class DemoComponent {
+  constructor(private fonticon: TNSFontIconService) {
+    // ^ IMPORTANT to cause Angular's DI system to instantiate the service!
+  }
+}
+```
+
 * Configure the service with the location to the `.css` file:
 
 Use the classname prefix as the `key` and the css filename as the value relative to the `app` directory.
@@ -95,12 +115,6 @@ nativeScriptBootstrap(DemoComponent, [
   })
 ]);
 ```
-
-* Use the Pipe, for example:
-
-```
-<Label class="fa" [text]="'fa-bluetooth' | fonticon"></Label> 
-``` 
 
 #### Configuration *Options*
 

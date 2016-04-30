@@ -45,6 +45,7 @@ src/platforms
 Thumbs.db
 .DS_Store
 *.ts
+!*.d.ts
 *.yml
 !src/app/pipes/*
 !src/app/services/*

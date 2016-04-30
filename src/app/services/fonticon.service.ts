@@ -5,7 +5,7 @@ import {Injectable} from 'angular2/core';
 import {knownFolders} from 'file-system';
 
 // libs
-import {BehaviorSubject} from 'rxjs/subject/BehaviorSubject';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class TNSFontIconService {
