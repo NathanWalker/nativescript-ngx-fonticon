@@ -6,13 +6,15 @@ import {
   injectAsync,
   beforeEach,
   beforeEachProviders
-} from 'angular2/testing';
+} from '@angular/core/testing';
 
-import {provide} from 'angular2/core';
+import {provide} from '@angular/core';
 import {TNSFontIconService} from './fonticon.service';
 
 import * as app from 'application';
 import * as dialogs from 'ui/dialogs';
+
+declare var spyOn;
 
 class AppMock {
   public get android() {

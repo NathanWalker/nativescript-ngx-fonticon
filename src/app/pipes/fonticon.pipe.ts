@@ -1,5 +1,5 @@
-import {Pipe, PipeTransform, OnDestroy, ChangeDetectorRef} from 'angular2/core';
-import {isPresent} from "angular2/src/facade/lang";
+import {Pipe, PipeTransform, OnDestroy, ChangeDetectorRef} from '@angular/core';
+import {isPresent} from "@angular/core/src/facade/lang";
 
 import {TNSFontIconService} from '../services/fonticon.service';
 

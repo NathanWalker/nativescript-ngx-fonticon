@@ -4,7 +4,7 @@
 import {nativeScriptBootstrap} from 'nativescript-angular/application';
 
 // angular 
-import {Component, provide} from 'angular2/core';
+import {Component, provide} from '@angular/core';
 
 // app
 import {

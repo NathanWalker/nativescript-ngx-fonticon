@@ -22,10 +22,49 @@ System.config({
   baseURL: '/base/',
   defaultJSExtensions: true,
   paths: {
-    'angular2/*': 'node_modules/angular2/*.js',
-    'rxjs/*': 'node_modules/rxjs/*.js',
     'application': 'node_modules/tns-core-modules/application/application.ios.js',
     'ui-dialogs/*': 'node_modules/tns-core-modules/ui/dialogs/*.js'
+  },
+  map: {
+    'rxjs': 'node_modules/rxjs',
+    '@angular': 'node_modules/@angular'
+  },
+  packages: {
+    '@angular/core': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/compiler': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/common': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/http': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/platform-browser': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/platform-browser-dynamic': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/router-deprecated': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/router': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    'rxjs': {
+      defaultExtension: 'js'
+    }
   }
 });
 

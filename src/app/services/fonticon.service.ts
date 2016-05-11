@@ -1,5 +1,5 @@
 // angular
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 
 // nativescript
 import {knownFolders} from 'file-system';

@@ -5,7 +5,7 @@ import {
   inject,
   beforeEach,
   beforeEachProviders
-} from 'angular2/testing';
+} from '@angular/core/testing';
 import {TNSFontIconPipe} from './fonticon.pipe';
 
 describe('Pipe: TNSFontIconPipe', () => {
