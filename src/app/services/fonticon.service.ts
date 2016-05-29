@@ -10,7 +10,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 @Injectable()
 export class TNSFontIconService {
   public filesLoaded: BehaviorSubject<any>;
-  private _css: any = {}; // font icon collections containing maps of classnames to unicode
+  public css: any = {}; // font icon collections containing maps of classnames to unicode
   private _paths: any; // file paths to font icon collections
   private _currentName: string; // current collection name
   private _debug: boolean = false;
@@ -18,7 +18,7 @@ export class TNSFontIconService {
   constructor(paths: any, debug?: boolean) {
     this._paths = paths;
     this._debug = debug;
-    this.filesLoaded = new BehaviorSubject(this._css);
+    this.filesLoaded = new BehaviorSubject(null);
     this.loadCss();
   }
 
@@ -31,13 +31,13 @@ export class TNSFontIconService {
 
     let initCollection = () => {
       this._currentName = fontIconCollections[cnt];
-      this._css[this._currentName] = {};
+      this.css[this._currentName] = {};
     }; 
     
     let loadFiles = () => {
       initCollection();
       if (cnt === fontIconCollections.length) {
-        this.filesLoaded.next(this._css);
+        this.filesLoaded.next(this.css);
       } else {
         this.loadFile(this._paths[this._currentName]).then(() => {
           cnt++;
@@ -80,7 +80,7 @@ export class TNSFontIconService {
         let value = cleanValue(pair[1]);
         for (let key of keys) {
           key = key.trim().slice(1).split(':before')[0];
-          this._css[this._currentName][key] = String.fromCharCode(parseInt(value.substring(2), 16));
+          this.css[this._currentName][key] = String.fromCharCode(parseInt(value.substring(2), 16));
           if (this._debug) {
             console.log(`${key}: ${value}`);
           }

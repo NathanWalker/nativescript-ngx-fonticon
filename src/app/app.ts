@@ -4,23 +4,26 @@
 import {nativeScriptBootstrap} from 'nativescript-angular/application';
 
 // angular 
-import {Component, provide} from '@angular/core';
+import {Component, provide, AfterViewInit} from '@angular/core';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 // app
 import {
-  TNSFontIconPipe,
-  TNSFontIconService
+  TNSFontIconPipe, TNSFontIconPurePipe, TNSFontIconService
 } from 'nativescript-ng2-fonticon/nativescript-ng2-fonticon';
 
 @Component({
   selector: 'app',
   template: `
   <ActionBar title="Fonticon Demo"> 
+    <ActionItem (tap)="toggleFirst()" ios.position="right">
+      <Button text="Toggle"></Button>
+    </ActionItem> 
   </ActionBar>
   <TabView>
     <ScrollView *tabItem="{title: 'FontAwesome'}">
       <GridLayout rows="auto,auto,auto,auto,auto,auto,auto,auto" columns="*,*">
-        <Label row="0" col="0" class="fa" [text]="'fa-glass' | fonticon"></Label>
+        <Label row="0" col="0" class="fa" [text]="(firstIcon$ | async) | fonticonPure"></Label>
         <Label row="0" col="1" class="fa" [text]="'fa-music' | fonticon"></Label>
         <Label row="1" col="0" class="fa" [text]="'fa-search' | fonticon"></Label>
         <Label row="1" col="1" class="fa" [text]="'fa-heart' | fonticon"></Label>
@@ -41,7 +44,7 @@ import {
 
     <ScrollView *tabItem="{title: 'Ionicons'}">
       <GridLayout rows="auto,auto,auto,auto,auto,auto,auto,auto" columns="*,*">
-        <Label row="0" col="0" class="ion" [text]="'ion-close' | fonticon"></Label>
+        <Label row="0" col="0" class="ion" [text]="(firstIonIcon$ | async) | fonticonPure"></Label>
         <Label row="0" col="1" class="ion" [text]="'ion-code' | fonticon"></Label>
         <Label row="1" col="0" class="ion" [text]="'ion-crop' | fonticon"></Label>
         <Label row="1" col="1" class="ion" [text]="'ion-document' | fonticon"></Label>
@@ -61,10 +64,28 @@ import {
     </ScrollView>
   </TabView>  
   `,
-  pipes: [TNSFontIconPipe]
+  pipes: [TNSFontIconPipe, TNSFontIconPurePipe]
 })
 class DemoComponent {
-  constructor(private pluginService: TNSFontIconService) {}
+  public firstIcon$: BehaviorSubject<string> = new BehaviorSubject('');
+  public firstIonIcon$: BehaviorSubject<string> = new BehaviorSubject('');
+  public isToggled: boolean = false;
+  constructor(private pluginService: TNSFontIconService) { 
+    setTimeout(() => {
+      this.firstIcon$.next('fa-glass');
+      this.firstIonIcon$.next('ion-close');
+    });
+  }
+  public toggleFirst() {
+    this.isToggled = !this.isToggled;
+    if (this.isToggled) {
+      this.firstIcon$.next('fa-stop');
+      this.firstIonIcon$.next('ion-videocamera');
+    } else {
+      this.firstIcon$.next('fa-glass');
+      this.firstIonIcon$.next('ion-close');
+    }
+  }
 }
 
 nativeScriptBootstrap(DemoComponent, [
@@ -73,7 +94,7 @@ nativeScriptBootstrap(DemoComponent, [
       return new TNSFontIconService({
         'fa': 'font-awesome.css',
         'ion': 'ionicons.css'
-      }, true);
+      });
     }
   })
-]);
+], {startPageActionBarHidden: false});
