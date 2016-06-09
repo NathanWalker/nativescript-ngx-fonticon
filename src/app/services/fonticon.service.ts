@@ -68,7 +68,7 @@ export class TNSFontIconService {
   private mapCss(data: any): void {
     let sets = data.split('}');
     let cleanValue = (val) => {
-      let v = val.split('content:')[1].toLowerCase().replace(/\\f/, '\\uf').trim().replace(/\"/g, '').slice(0, -1);
+      let v = val.split('content:')[1].toLowerCase().replace(/\\f/, '\\uf').trim().replace(/\"/g, '').replace(/;/g, '');
       return v;
     };
 
