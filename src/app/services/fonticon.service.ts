@@ -14,7 +14,7 @@ export class TNSFontIconService {
   private _paths: any; // file paths to font icon collections
   private _currentName: string; // current collection name
   private _debug: boolean = false;
-  
+
   constructor(paths: any, debug?: boolean) {
     this._paths = paths;
     this._debug = debug;
@@ -32,8 +32,8 @@ export class TNSFontIconService {
     let initCollection = () => {
       this._currentName = fontIconCollections[cnt];
       this.css[this._currentName] = {};
-    }; 
-    
+    };
+
     let loadFiles = () => {
       initCollection();
       if (cnt === fontIconCollections.length) {
@@ -46,7 +46,7 @@ export class TNSFontIconService {
       }
     };
 
-    loadFiles();         
+    loadFiles();
   }
 
   private loadFile(path: string): Promise<any> {
@@ -61,14 +61,14 @@ export class TNSFontIconService {
         resolve();
       }, (err) => {
         reject(err);
-      });  
+      });
     });
   }
 
   private mapCss(data: any): void {
     let sets = data.split('}');
     let cleanValue = (val) => {
-      let v = val.split('content:')[1].replace(/\\f/, '\\uf').trim().replace(/\"/g, '').slice(0, -1);
+      let v = val.split('content:')[1].toLowerCase().replace(/\\f/, '\\uf').trim().replace(/\"/g, '').slice(0, -1);
       return v;
     };
 
@@ -87,5 +87,5 @@ export class TNSFontIconService {
         }
       }
     }
-  }  
+  }
 }
