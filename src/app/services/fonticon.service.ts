@@ -73,7 +73,7 @@ export class TNSFontIconService {
     };
 
     for (let set of sets) {
-      let pair = set.split(':before {');
+      let pair = set.replace(/ /g, '').split(':before{');
       let keyGroups = pair[0];
       let keys = keyGroups.split(',');
       if (pair[1]) {
