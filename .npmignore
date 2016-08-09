@@ -44,11 +44,11 @@ src/platforms
 
 Thumbs.db
 .DS_Store
-*.ts
-!*.d.ts
 *.yml
 !src/app/pipes/*
 !src/app/services/*
+*.ts
+!*.d.ts
 *.spec.*
 *.e2e.*
 CONTRIBUTING.md

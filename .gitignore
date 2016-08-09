@@ -54,10 +54,10 @@ __build__/**
 .idea/
 *.swp
 
-*.d.ts
 *.js
 *.js.map
 *.d.ts
+!index.d.ts
 !*.e2e.js
 !karma*.js
 !test-main.js
