@@ -5,11 +5,11 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "moduleResolution": "node"
+    "noEmitOnError": false,
+    "noEmitHelpers": true
   },
   "files": [
-    "typings/browser.d.ts",
+    "typings/index.d.ts",
     "src/node_modules/tns-core-modules/file-system/file-system.d.ts",
     "nativescript-ng2-fonticon.ts"
   ],

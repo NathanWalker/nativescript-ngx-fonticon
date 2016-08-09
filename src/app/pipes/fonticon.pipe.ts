@@ -8,46 +8,40 @@ import {TNSFontIconService} from '../services/fonticon.service';
   pure: false
 })
 export class TNSFontIconPipe implements PipeTransform, OnDestroy {
-  private value: '';
-  private iconSub: any;
+  private _collectionName: string;
+  private _value: '';
+  private _iconSub: any;
 
   constructor(private fonticon: TNSFontIconService, private _ref: ChangeDetectorRef) { }
 
   transform(className: string, args: any[]) {
-    let collectionName: string;
-    if (args && args.length && args[0] !== null) {
-      collectionName = args[0];
-    } else if (className && className.indexOf('-') > -1) {
-      // derive from classname
-      collectionName = className.split('-')[0];
-    } else {      
-      // font collection name is required
-      return this.value;
-    }
+    if (!this._collectionName)
+      this._collectionName = getCollectionName(className, args);
 
-    if (!this.value || (this.fonticon.css && this.fonticon.css[collectionName] && this.value !== this.fonticon.css[collectionName][className])) {
+    if (!this._value || (this.fonticon.css && this.fonticon.css[this._collectionName] && this._value !== this.fonticon.css[this._collectionName][className])) {
       // only subscribe if value is changing
       // if there is a subscription to iconSub, clean it
       this._dispose();
 
-      this.iconSub = this.fonticon.filesLoaded.subscribe((data: any) => {
-        if (data && data[collectionName] && data[collectionName][className]) {
-          if (this.value !== data[collectionName][className]) {
-            // only markForCheck is value has changed
-            this.value = data[collectionName][className];
+      this._iconSub = this.fonticon.filesLoaded.subscribe((data: any) => {
+        if (data && data[this._collectionName] && data[this._collectionName][className]) {
+          if (this._value !== data[this._collectionName][className]) {
+            // only markForCheck if value has changed
+            this._value = data[this._collectionName][className];
             this._ref.markForCheck();  
+            this._dispose();
           }
         }
       });  
     }
 
-    return this.value;
+    return this._value;
   }
 
   _dispose(): void {
-    if (isPresent(this.iconSub)) {
-      this.iconSub.unsubscribe();
-      this.iconSub = undefined;
+    if (isPresent(this._iconSub)) {
+      this._iconSub.unsubscribe();
+      this._iconSub = undefined;
     }
   }  
 
@@ -61,22 +55,30 @@ export class TNSFontIconPipe implements PipeTransform, OnDestroy {
   name: 'fonticonPure'
 })
 export class TNSFontIconPurePipe implements PipeTransform {
+  private _collectionName: string;
 
   constructor(private fonticon: TNSFontIconService) { }
 
   transform(className: string, args: any[]) {
-    let collectionName: string;
-    if (args && args.length && args[0] !== null) {
-      collectionName = args[0];
-    } else if (className && className.indexOf('-') > -1) {
-      // derive from classname
-      collectionName = className.split('-')[0];
-    } 
-
-    if (this.fonticon.css && this.fonticon.css[collectionName]) {
-      return this.fonticon.css[collectionName][className];
+    if (!this._collectionName)
+      this._collectionName = getCollectionName(className, args);
+    
+    // console.log(`fonticonPure: ${className}`);
+    if (this.fonticon.css && this.fonticon.css[this._collectionName]) {
+      return this.fonticon.css[this._collectionName][className];
     } else {
       return '';
     } 
   } 
+}
+
+function getCollectionName(className: string, args: any[]): string {
+  if (args && args.length && args[0] !== null) {
+    return args[0];
+  } else if (className && className.indexOf('-') > -1) {
+    // derive from classname
+    return className.split('-')[0];
+  } else {
+    return '';
+  }
 }
