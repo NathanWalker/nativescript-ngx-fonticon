@@ -1,13 +1,13 @@
 {
 	"name": "nativescript-ng2-fonticon",
-	"version": "1.2.5",
+	"version": "1.2.6",
 	"description": "Use custom font icon collections seamlessly with NativeScript + Angular2.",
 	"main": "nativescript-ng2-fonticon.js",
 	"typings": "index.d.ts",
 	"nativescript": {
 		"platforms": {
-			"android": "2.1.1",
-			"ios": "2.1.1"
+			"android": "2.2.0",
+			"ios": "2.2.1"
 		}
 	},
 	"repository": {
@@ -35,7 +35,7 @@
 		"url": "https://github.com/NathanWalker/nativescript-ng2-fonticon/issues"
 	},
 	"homepage": "https://github.com/NathanWalker/nativescript-ng2-fonticon#readme",
-	"scripts": {
+  "scripts": {
 		"build": "tsc",
 		"clean": "rm -rf src/platforms",
 		"demo.ios": "npm run preparedemo; cd src; tns emulate ios",
@@ -48,24 +48,27 @@
 		"preparedemo": "npm run build; cd src; tns plugin remove nativescript-ng2-fonticon; tns plugin add ..; tns install"
 	},
 	"dependencies": {
-		"@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/forms": "0.2.0",
-    "@angular/http": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
-    "@angular/platform-server": "2.0.0-rc.4",
-    "@angular/router": "3.0.0-beta.2",
-    "@angular/router-deprecated": "2.0.0-rc.2",
-		"es6-module-loader": "^0.17.8",
-		"es6-promise": "^3.1.2",
-		"es6-shim": "^0.35.0",
-		"reflect-metadata": "0.1.3",
-		"rxjs": "5.0.0-beta.6",
-		"systemjs": "~0.19.18",
-		"tns-core-modules": "^2.0.0",
-		"zone.js": "0.6.12"
+		"@angular/common": "2.0.0-rc.6",
+    "@angular/compiler": "2.0.0-rc.6",
+    "@angular/core": "2.0.0-rc.6",
+    "@angular/forms": "2.0.0-rc.6",
+    "@angular/http": "2.0.0-rc.6",
+    "@angular/platform-browser": "2.0.0-rc.6",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.6",
+    "@angular/router": "3.0.0-rc.2",
+    "es6-promise": "~3.1.2",
+    "es6-shim": "^0.35.0",
+    "nativescript-angular": "next",
+    "nativescript-ng2-fonticon": "file:..",
+    "parse5": "1.4.2",
+    "punycode": "1.3.2",
+    "querystring": "0.2.0",
+    "reflect-metadata": "^0.1.8",
+    "rimraf": "^2.5.1",
+    "rxjs": "5.0.0-beta.11",
+    "tns-core-modules": "^2.2.1",
+    "url": "0.10.3",
+    "zone.js": "0.6.17"
 	},
 	"devDependencies": {
 		"autoprefixer": "^6.3.2",
@@ -87,7 +90,7 @@
 		"tsconfig-lint": "^0.5.0",
 		"tslint": "^3.4.0",
 		"typedoc": "^0.3.12",
-		"typescript": "^1.8.7",
-		"typings": "^0.6.8"
+		"typescript": "^1.8.10",
+		"typings": "^1.3.1"
 	}
 }

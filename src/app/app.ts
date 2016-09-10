@@ -1,10 +1,11 @@
 ﻿import 'reflect-metadata';
 
 // nativescript
-import {nativeScriptBootstrap} from 'nativescript-angular/application';
+import { NativeScriptModule, platformNativeScriptDynamic } from 'nativescript-angular/platform';
 
 // angular 
-import {Component, provide, AfterViewInit} from '@angular/core';
+import {Component, AfterViewInit, NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 // app
@@ -63,8 +64,7 @@ import {
       </GridLayout>
     </ScrollView>
   </TabView>  
-  `,
-  pipes: [TNSFontIconPipe, TNSFontIconPurePipe]
+  `
 })
 class DemoComponent {
   public firstIcon$: BehaviorSubject<string> = new BehaviorSubject('');
@@ -88,13 +88,27 @@ class DemoComponent {
   }
 }
 
-nativeScriptBootstrap(DemoComponent, [
-  provide(TNSFontIconService, {
-    useFactory: () => {
-      return new TNSFontIconService({
-        'fa': 'font-awesome.css',
-        'ion': 'ionicons.css'
-      });
+@NgModule({
+  imports: [
+    NativeScriptModule
+  ],
+  declarations: [
+    DemoComponent,
+    TNSFontIconPipe, TNSFontIconPurePipe
+  ],
+  providers: [
+    {
+      provide: TNSFontIconService,
+      useFactory: () => {
+        return new TNSFontIconService({
+          'fa': 'font-awesome.css',
+          'ion': 'ionicons.css'
+        });
+      }
     }
-  })
-], {startPageActionBarHidden: false});
+  ],
+  bootstrap: [DemoComponent]
+})
+class AppModule { }
+
+platformNativeScriptDynamic().bootstrapModule(AppModule);

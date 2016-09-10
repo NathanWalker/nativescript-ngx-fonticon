@@ -2,23 +2,21 @@
   "nativescript": {
     "id": "org.nativescript.demo",
     "tns-ios": {
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "tns-android": {
-      "version": "2.0.0"
+      "version": "2.2.0"
     }
   },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/forms": "0.2.0",
-    "@angular/http": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
-    "@angular/platform-server": "2.0.0-rc.4",
-    "@angular/router": "3.0.0-beta.2",
-    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/common": "2.0.0-rc.6",
+    "@angular/compiler": "2.0.0-rc.6",
+    "@angular/core": "2.0.0-rc.6",
+    "@angular/forms": "2.0.0-rc.6",
+    "@angular/http": "2.0.0-rc.6",
+    "@angular/platform-browser": "2.0.0-rc.6",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.6",
+    "@angular/router": "3.0.0-rc.2",
     "es6-promise": "~3.1.2",
     "es6-shim": "^0.35.0",
     "nativescript-angular": "next",
@@ -26,12 +24,12 @@
     "parse5": "1.4.2",
     "punycode": "1.3.2",
     "querystring": "0.2.0",
-    "reflect-metadata": "0.1.3",
+    "reflect-metadata": "^0.1.8",
     "rimraf": "^2.5.1",
-    "rxjs": "5.0.0-beta.6",
-    "tns-core-modules": "next",
+    "rxjs": "5.0.0-beta.11",
+    "tns-core-modules": "^2.2.1",
     "url": "0.10.3",
-    "zone.js": "0.6.12"
+    "zone.js": "0.6.17"
   },
   "devDependencies": {
     "babel-traverse": "6.8.0",

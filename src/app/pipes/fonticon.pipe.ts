@@ -1,5 +1,4 @@
 import {Pipe, PipeTransform, OnDestroy, ChangeDetectorRef} from '@angular/core';
-import {isPresent} from "@angular/core/src/facade/lang";
 
 import {TNSFontIconService} from '../services/fonticon.service';
 
@@ -39,7 +38,7 @@ export class TNSFontIconPipe implements PipeTransform, OnDestroy {
   }
 
   _dispose(): void {
-    if (isPresent(this._iconSub)) {
+    if (this._iconSub) {
       this._iconSub.unsubscribe();
       this._iconSub = undefined;
     }
