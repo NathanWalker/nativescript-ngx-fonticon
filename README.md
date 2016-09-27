@@ -88,32 +88,52 @@ export class DemoComponent {
 
 Use the classname prefix as the `key` and the css filename as the value relative to the `app` directory.
 
-```
-nativeScriptBootstrap(DemoComponent, [
-  provide(TNSFontIconService, {
-    useFactory: () => {
-      return new TNSFontIconService({
-        'fa': 'font-awesome.css'
-      });
-    }
-  })
-]);
+```typescript
+@NgModule({
+	declarations: [
+		DemoComponent,
+	],
+	bootstrap: [
+		DemoComponent,
+	],
+	imports: [
+		NativeScriptModule,
+	],
+	providers: [{
+		provide: TNSFontIconService,
+		useFactory: () => {
+			return new TNSFontIconService({
+				'fa': 'font-awesome.css'
+			})
+		}
+	}],
+})
 ```
 
 * *Optional* Configure the service with DEBUGGING on
 
 When working with a new font collection, you may need to see the mapping the service provides. Passing `true` as seen below will cause the mapping to be output in the console to determine if your font collection is being setup correctly.
 
-```
-nativeScriptBootstrap(DemoComponent, [
-  provide(TNSFontIconService, {
-    useFactory: () => {
-      return new TNSFontIconService({
-        'fa': 'font-awesome.css'
-      }, true);  <--- pass true to turn debug mode on
-    }
-  })
-]);
+```typescript
+@NgModule({
+	declarations: [
+		DemoComponent,
+	],
+	bootstrap: [
+		DemoComponent,
+	],
+	imports: [
+		NativeScriptModule,
+	],
+	providers: [{
+		provide: TNSFontIconService,
+		useFactory: () => {
+			return new TNSFontIconService({
+				'fa': 'font-awesome.css'
+			}, true) // pass true to turn debug mode on
+		}
+	}],
+})
 ```
 
 #### Configuration *Options*
@@ -126,16 +146,26 @@ If your font collection name does not match the classname prefix, you can pass t
 
 With a configuration like this:
 
-```
-nativeScriptBootstrap(DemoComponent, [
-  provide(TNSFontIconService, {
-    useFactory: () => {
-      return new TNSFontIconService({
-        'fontawesome': 'font-awesome.css'
-      });
-    }
-  })
-]);
+```typescript
+@NgModule({
+	declarations: [
+		DemoComponent,
+	],
+	bootstrap: [
+		DemoComponent,
+	],
+	imports: [
+		NativeScriptModule,
+	],
+	providers: [{
+		provide: TNSFontIconService,
+		useFactory: () => {
+			return new TNSFontIconService({
+				'fontawesome': 'font-awesome.css'
+			})
+		}
+	}],
+})
 ```
 
 Demo FontAwesome (iOS) |  Demo Ionicons (iOS)
