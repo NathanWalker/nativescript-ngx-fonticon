@@ -9,7 +9,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class TNSFontIconService {
-  public static config: boolean = false;
+  public static config: any = {};
   public static debug: boolean = false;
   public filesLoaded: BehaviorSubject<any>;
   public css: any = {}; // font icon collections containing maps of classnames to unicode
