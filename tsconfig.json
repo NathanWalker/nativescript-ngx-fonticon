@@ -1,18 +1,34 @@
 {
-  "compilerOptions": {
-    "target": "ES5",
-    "module": "commonjs",
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noEmitOnError": false,
-    "noEmitHelpers": true
-  },
-  "files": [
-    "typings/index.d.ts",
-    "src/node_modules/tns-core-modules/file-system/file-system.d.ts",
-    "nativescript-ng2-fonticon.ts"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "removeComments": true,
+        "noLib": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "dom"
+        ],
+        "sourceMap": true,
+        "pretty": true,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "noImplicitAny": false,
+        "noImplicitReturns": true,
+        "noImplicitUseStrict": false,
+        "noFallthroughCasesInSwitch": true,
+        "typeRoots": [
+            "node_modules/@types",
+            "node_modules"
+        ],
+        "types": [
+            "jasmine"
+        ]
+    },
+    "exclude": [
+        "node_modules",
+        "src"
+    ],
+    "compileOnSave": false
 }

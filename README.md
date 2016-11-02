@@ -64,27 +64,7 @@ app/font-awesome.css
 
 Then modify the css file to isolate just the icon fonts needed. [Watch this video to better understand](https://www.youtube.com/watch?v=qb2sk0XXQDw).
 
-* Setup your component
-
-Add Pipe and it is important to inject the service into the constructor. Otherwise Angular 2's DI system will not instantiate your service.
-
-```
-import {Component} from 'angular2/core';
-import {TNSFontIconService, TNSFontIconPipe} from 'nativescript-ng2-fonticon';
-
-@Component({
-  selector: 'demo',
-  template: '<Label class="fa" [text]="'fa-bluetooth' | fonticon"></Label> ',
-  pipes: [TNSFontIconPipe]
-})
-export class DemoComponent {
-  constructor(private fonticon: TNSFontIconService) {
-    // ^ IMPORTANT to cause Angular's DI system to instantiate the service!
-  }
-}
-```
-
-* Configure the service with the location to the `.css` file:
+* Import the `TNSFontIconModule` passing a configuration with the location to the `.css` file to `forRoot`:
 
 Use the classname prefix as the `key` and the css filename as the value relative to the `app` directory.
 
@@ -98,15 +78,10 @@ Use the classname prefix as the `key` and the css filename as the value relative
 	],
 	imports: [
 		NativeScriptModule,
-	],
-	providers: [{
-		provide: TNSFontIconService,
-		useFactory: () => {
-			return new TNSFontIconService({
-				'fa': 'font-awesome.css'
-			})
-		}
-	}],
+		TNSFontIconModule.forRoot({
+      'fa': 'font-awesome.css'
+    })
+	]
 })
 ```
 
@@ -115,6 +90,9 @@ Use the classname prefix as the `key` and the css filename as the value relative
 When working with a new font collection, you may need to see the mapping the service provides. Passing `true` as seen below will cause the mapping to be output in the console to determine if your font collection is being setup correctly.
 
 ```typescript
+// statically turn debug mode on
+TNSFontIconService.debug = true;
+
 @NgModule({
 	declarations: [
 		DemoComponent,
@@ -124,16 +102,30 @@ When working with a new font collection, you may need to see the mapping the ser
 	],
 	imports: [
 		NativeScriptModule,
-	],
-	providers: [{
-		provide: TNSFontIconService,
-		useFactory: () => {
-			return new TNSFontIconService({
-				'fa': 'font-awesome.css'
-			}, true) // pass true to turn debug mode on
-		}
-	}],
+		TNSFontIconModule.forRoot({
+      'fa': 'font-awesome.css'
+    })
+	]
 })
+```
+
+* Setup your component
+
+It is important to inject the service into the constructor of your root component. Otherwise Angular 2's DI system will not instantiate your service.
+
+```
+import { Component } from 'angular2/core';
+import { TNSFontIconService } from 'nativescript-ng2-fonticon';
+
+@Component({
+  selector: 'demo',
+  template: '<Label class="fa" [text]="'fa-bluetooth' | fonticon"></Label> '
+})
+export class DemoComponent {
+  constructor(private fonticon: TNSFontIconService) {
+    // ^ IMPORTANT to cause Angular's DI system to instantiate the service!
+  }
+}
 ```
 
 #### Configuration *Options*
@@ -156,15 +148,10 @@ With a configuration like this:
 	],
 	imports: [
 		NativeScriptModule,
-	],
-	providers: [{
-		provide: TNSFontIconService,
-		useFactory: () => {
-			return new TNSFontIconService({
-				'fontawesome': 'font-awesome.css'
-			})
-		}
-	}],
+		TNSFontIconModule.forRoot({
+      'fontawesome': 'font-awesome.css'
+    })
+	]
 })
 ```
 

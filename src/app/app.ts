@@ -10,8 +10,10 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 // app
 import {
-  TNSFontIconPipe, TNSFontIconPurePipe, TNSFontIconService
-} from 'nativescript-ng2-fonticon/nativescript-ng2-fonticon';
+  TNSFontIconModule, TNSFontIconService
+} from 'nativescript-ng2-fonticon';
+
+TNSFontIconService.debug = true;
 
 @Component({
   selector: 'app',
@@ -90,22 +92,14 @@ class DemoComponent {
 
 @NgModule({
   imports: [
-    NativeScriptModule
+    NativeScriptModule,
+    TNSFontIconModule.forRoot({
+      'fa': 'font-awesome.css',
+      'ion': 'ionicons.css'
+    })
   ],
   declarations: [
-    DemoComponent,
-    TNSFontIconPipe, TNSFontIconPurePipe
-  ],
-  providers: [
-    {
-      provide: TNSFontIconService,
-      useFactory: () => {
-        return new TNSFontIconService({
-          'fa': 'font-awesome.css',
-          'ion': 'ionicons.css'
-        });
-      }
-    }
+    DemoComponent
   ],
   bootstrap: [DemoComponent]
 })

@@ -9,23 +9,21 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class TNSFontIconService {
+  public static config: boolean = false;
+  public static debug: boolean = false;
   public filesLoaded: BehaviorSubject<any>;
   public css: any = {}; // font icon collections containing maps of classnames to unicode
-  private _paths: any; // file paths to font icon collections
   private _currentName: string; // current collection name
-  private _debug: boolean = false;
 
-  constructor(paths: any, debug?: boolean) {
-    this._paths = paths;
-    this._debug = debug;
+  constructor() {
     this.filesLoaded = new BehaviorSubject(null);
     this.loadCss();
   }
 
   public loadCss(): void {
     let cnt = 0;
-    let fontIconCollections = Object.keys(this._paths);
-    if (this._debug) {
+    let fontIconCollections = Object.keys(TNSFontIconService.config);
+    if (TNSFontIconService.debug) {
       console.log(`Collections to load: ${fontIconCollections}`);
     }
 
@@ -38,8 +36,10 @@ export class TNSFontIconService {
       initCollection();
       if (cnt === fontIconCollections.length) {
         this.filesLoaded.next(this.css);
+        // clear
+        delete TNSFontIconService.config;
       } else {
-        this.loadFile(this._paths[this._currentName]).then(() => {
+        this.loadFile(TNSFontIconService.config[this._currentName]).then(() => {
           cnt++;
           loadFiles();
         });
@@ -50,7 +50,7 @@ export class TNSFontIconService {
   }
 
   private loadFile(path: string): Promise<any> {
-    if (this._debug) {
+    if (TNSFontIconService.debug) {
       console.log(`----------`);
       console.log(`Loading collection '${this._currentName}' from file: ${path}`);
     }
@@ -81,7 +81,7 @@ export class TNSFontIconService {
         for (let key of keys) {
           key = key.trim().slice(1).split(':before')[0];
           this.css[this._currentName][key] = String.fromCharCode(parseInt(value.substring(2), 16));
-          if (this._debug) {
+          if (TNSFontIconService.debug) {
             console.log(`${key}: ${value}`);
           }
         }
