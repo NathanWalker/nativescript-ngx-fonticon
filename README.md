@@ -80,7 +80,7 @@ import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
 	],
 	imports: [
 		NativeScriptModule,
-		TNSFontIconModule.forRoot({
+    TNSFontIconModule.forRoot({
       'fa': 'font-awesome.css'
     })
 	]
@@ -151,7 +151,7 @@ With a configuration like this:
 	],
 	imports: [
 		NativeScriptModule,
-		TNSFontIconModule.forRoot({
+    TNSFontIconModule.forRoot({
       'fontawesome': 'font-awesome.css'
     })
 	]
