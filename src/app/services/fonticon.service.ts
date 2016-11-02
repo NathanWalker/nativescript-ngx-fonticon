@@ -36,8 +36,6 @@ export class TNSFontIconService {
       initCollection();
       if (cnt === fontIconCollections.length) {
         this.filesLoaded.next(this.css);
-        // clear
-        delete TNSFontIconService.config;
       } else {
         this.loadFile(TNSFontIconService.config[this._currentName]).then(() => {
           cnt++;
