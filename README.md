@@ -69,6 +69,8 @@ Then modify the css file to isolate just the icon fonts needed. [Watch this vide
 Use the classname prefix as the `key` and the css filename as the value relative to the `app` directory.
 
 ```typescript
+import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
+
 @NgModule({
 	declarations: [
 		DemoComponent,
@@ -90,7 +92,8 @@ Use the classname prefix as the `key` and the css filename as the value relative
 When working with a new font collection, you may need to see the mapping the service provides. Passing `true` as seen below will cause the mapping to be output in the console to determine if your font collection is being setup correctly.
 
 ```typescript
-// statically turn debug mode on
+import { TNSFontIconModule, TNSFontIconService } from 'nativescript-ng2-fonticon';
+// turn debug on
 TNSFontIconService.debug = true;
 
 @NgModule({
