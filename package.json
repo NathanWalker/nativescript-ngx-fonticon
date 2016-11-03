@@ -1,6 +1,6 @@
 {
   "name": "nativescript-ng2-fonticon",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Use custom font icon collections seamlessly with NativeScript + Angular2.",
   "main": "nativescript-ng2-fonticon.js",
   "typings": "index.d.ts",
