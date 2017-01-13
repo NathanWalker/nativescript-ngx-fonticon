@@ -1,6 +1,6 @@
-## A simpler way to use font icons with NativeScript + Angular2.
+## A simpler way to use font icons with NativeScript + Angular.
 
-[![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
+[![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 ### The Problem
@@ -32,7 +32,7 @@ With this plugin, you can instead reference the `fonticon` by the specific class
 ## Install
 
 ```
-npm install nativescript-ng2-fonticon --save
+npm install nativescript-ngx-fonticon --save
 ```
 
 ### Usage
@@ -68,7 +68,7 @@ Then modify the css file to isolate just the icon fonts needed. [Watch this vide
 Use the classname prefix as the `key` and the css filename as the value relative to the `app` directory.
 
 ```typescript
-import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
+import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 
 @NgModule({
 	declarations: [
@@ -91,7 +91,7 @@ import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
 When working with a new font collection, you may need to see the mapping the service provides. Passing `true` as seen below will cause the mapping to be output in the console to determine if your font collection is being setup correctly.
 
 ```typescript
-import { TNSFontIconModule, TNSFontIconService } from 'nativescript-ng2-fonticon';
+import { TNSFontIconModule, TNSFontIconService } from 'nativescript-ngx-fonticon';
 // turn debug on
 TNSFontIconService.debug = true;
 
@@ -113,11 +113,11 @@ TNSFontIconService.debug = true;
 
 * Setup your component
 
-It is important to inject the service into the constructor of your root component. Otherwise Angular 2's DI system will not instantiate your service.
+It is important to inject the service into the constructor of your root component. Otherwise Angular's DI system will not instantiate your service.
 
 ```
-import { Component } from 'angular2/core';
-import { TNSFontIconService } from 'nativescript-ng2-fonticon';
+import { Component } from '@angular/core';
+import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 
 @Component({
   selector: 'demo',

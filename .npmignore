@@ -33,6 +33,7 @@ docs
 doc
 lib
 test
+hooks
 src
 src/package.json
 src/app/app*
@@ -40,6 +41,8 @@ src/app/App_Resources
 src/app/fonts
 src/app/package.json
 src/hooks
+src/lib
+src/node_modules
 src/platforms
 
 Thumbs.db
@@ -49,6 +52,7 @@ Thumbs.db
 !src/app/services/*
 *.ts
 !*.d.ts
+references.d.ts
 *.spec.*
 *.e2e.*
 CONTRIBUTING.md
@@ -58,8 +62,6 @@ test-main.js
 tsconfig.json
 tslint.json
 typedoc.json
-typings.json
-typings
 .travis.yml
 .jshintrc
 .editorconfig

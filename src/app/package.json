@@ -1,6 +1,6 @@
 {
   "name": "tns-template-hello-world-ts",
-  "main": "app.js",
+  "main": "main.js",
   "version": "1.6.0",
   "author": {
     "name": "Telerik",

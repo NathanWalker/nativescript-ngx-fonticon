@@ -1,21 +1,24 @@
 {
-  "name": "nativescript-ng2-fonticon",
-  "version": "1.3.4",
-  "description": "Use custom font icon collections seamlessly with NativeScript + Angular2.",
-  "main": "nativescript-ng2-fonticon",
+  "name": "nativescript-ngx-fonticon",
+  "version": "2.0.0",
+  "description": "Use custom font icon collections seamlessly with NativeScript for Angular.",
+  "main": "nativescript-ngx-fonticon.js",
   "typings": "index.d.ts",
   "nativescript": {
     "platforms": {
-      "android": "2.3.0",
-      "ios": "2.3.0"
+      "android": "2.4.1",
+      "ios": "2.4.0"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NathanWalker/nativescript-ng2-fonticon.git"
+    "url": "git+https://github.com/NathanWalker/nativescript-ngx-fonticon.git"
   },
   "keywords": [
+    "angular",
     "angular2",
+    "ng",
+    "ngx",
     "ng2",
     "nativescript",
     "icon",
@@ -32,63 +35,35 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NathanWalker/nativescript-ng2-fonticon/issues"
+    "url": "https://github.com/NathanWalker/nativescript-ngx-fonticon/issues"
   },
-  "homepage": "https://github.com/NathanWalker/nativescript-ng2-fonticon#readme",
+  "homepage": "https://github.com/NathanWalker/nativescript-ngx-fonticon#readme",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf src/platforms",
-    "demo.ios": "npm run preparedemo; cd src; tns emulate ios",
-    "demo.android": "npm run preparedemo; cd src; tns emulate android",
-    "test": "tsc; karma start",
-    "test-watch": "karma start --no-single-run --auto-watch",
-    "ci": "npm run test",
-    "docs": "typedoc --options typedoc.json src/app/app.ts",
-    "preparedemo": "npm run build; cd src; tns plugin remove nativescript-ng2-fonticon; tns plugin add ..; tns install"
+    "demo.ios": "npm run preparedemo; cd src; tns run ios --emulator",
+    "demo.android": "npm run preparedemo; cd src; tns run android --emulator",
+    "preparedemo": "npm run build; cd src; tns plugin remove nativescript-ngx-fonticon; tns plugin add ..; tns install"
   },
   "dependencies": {
-    "@angular/common": "^2.1.2",
-    "@angular/compiler": "^2.1.2",
-    "@angular/core": "^2.1.2",
-    "@angular/forms": "^2.1.2",
-    "@angular/http": "^2.1.2",
-    "@angular/platform-browser": "^2.1.2",
-    "@angular/platform-browser-dynamic": "^2.1.2",
-    "@angular/router": "^3.1.2",
-    "es6-promise": "~3.1.2",
-    "es6-shim": "^0.35.0",
-    "nativescript-angular": "next",
-    "parse5": "1.4.2",
-    "punycode": "1.3.2",
-    "querystring": "0.2.0",
+    "@angular/common": "2.3.1",
+    "@angular/compiler": "2.3.1",
+    "@angular/core": "2.3.1",
+    "@angular/forms": "2.3.1",
+    "@angular/http": "2.3.1",
+    "@angular/platform-browser": "2.3.1",
+    "@angular/platform-browser-dynamic": "2.3.1",
+    "@angular/router": "3.3.1",
+    "nativescript-angular": "1.3.0",
     "reflect-metadata": "^0.1.8",
-    "rimraf": "^2.5.1",
-    "rxjs": "5.0.0-beta.12",
-    "tns-core-modules": "^2.3.0",
-    "url": "0.10.3",
-    "zone.js": "0.6.25"
+    "rxjs": "5.0.0-rc.4",
+    "tns-core-modules": "^2.4.4"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.5.37",
-    "autoprefixer": "^6.3.2",
-    "jasmine-core": "^2.3.4",
-    "jasmine-spec-reporter": "^2.4.0",
-    "karma": "0.13.19",
-    "karma-chrome-launcher": "^0.2.1",
-    "karma-coverage": "^0.5.2",
-    "karma-jasmine": "^0.3.7",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-typescript-preprocessor": "^0.0.21",
-    "node-sass": "^3.4.2",
-    "phantomjs-prebuilt": "^2.1.4",
-    "remap-istanbul": "^0.5.1",
     "rimraf": "^2.5.1",
-    "systemjs-builder": "^0.15.7",
     "traceur": "^0.0.91",
-    "tsconfig-lint": "^0.5.0",
-    "tslint": "^3.4.0",
     "typedoc": "^0.3.12",
-    "typescript": "^2.0.6"
+    "typescript": "~2.0.10",
+    "zone.js": "~0.7.2"
   }
 }

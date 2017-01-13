@@ -1,19 +1,10 @@
-﻿import 'reflect-metadata';
-
-// nativescript
-import { NativeScriptModule, platformNativeScriptDynamic } from 'nativescript-angular/platform';
-
-// angular 
-import {Component, AfterViewInit, NgModule} from '@angular/core';
+﻿// angular 
+import { Component, AfterViewInit, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 // app
-import {
-  TNSFontIconModule, TNSFontIconService
-} from 'nativescript-ng2-fonticon';
-
-TNSFontIconService.debug = true;
+import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 
 @Component({
   selector: 'app',
@@ -68,7 +59,7 @@ TNSFontIconService.debug = true;
   </TabView>  
   `
 })
-class DemoComponent {
+export class AppComponent {
   public firstIcon$: BehaviorSubject<string> = new BehaviorSubject('');
   public firstIonIcon$: BehaviorSubject<string> = new BehaviorSubject('');
   public isToggled: boolean = false;
@@ -89,20 +80,3 @@ class DemoComponent {
     }
   }
 }
-
-@NgModule({
-  imports: [
-    NativeScriptModule,
-    TNSFontIconModule.forRoot({
-      'fa': 'font-awesome.css',
-      'ion': 'ionicons.css'
-    })
-  ],
-  declarations: [
-    DemoComponent
-  ],
-  bootstrap: [DemoComponent]
-})
-class AppModule { }
-
-platformNativeScriptDynamic().bootstrapModule(AppModule);

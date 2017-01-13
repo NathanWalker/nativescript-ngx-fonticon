@@ -1,45 +1,34 @@
 {
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.demo",
+    "id": "org.nativescript.sample",
     "tns-ios": {
-      "version": "2.3.0"
-    },
-    "tns-android": {
-      "version": "2.3.0"
+      "version": "2.4.0"
     }
   },
   "dependencies": {
-    "@angular/common": "^2.1.2",
-    "@angular/compiler": "^2.1.2",
-    "@angular/core": "^2.1.2",
-    "@angular/forms": "^2.1.2",
-    "@angular/http": "^2.1.2",
-    "@angular/platform-browser": "^2.1.2",
-    "@angular/platform-browser-dynamic": "^2.1.2",
-    "@angular/router": "^3.1.2",
-    "es6-promise": "~3.1.2",
-    "es6-shim": "^0.35.0",
-    "nativescript-angular": "next",
-    "nativescript-ng2-fonticon": "file:..",
-    "parse5": "1.4.2",
-    "punycode": "1.3.2",
-    "querystring": "0.2.0",
-    "reflect-metadata": "^0.1.8",
-    "rimraf": "^2.5.1",
-    "rxjs": "5.0.0-beta.12",
-    "tns-core-modules": "^2.3.0",
-    "url": "0.10.3",
-    "zone.js": "0.6.21"
+    "@angular/common": "2.3.1",
+    "@angular/compiler": "2.3.1",
+    "@angular/core": "2.3.1",
+    "@angular/forms": "2.3.1",
+    "@angular/http": "2.3.1",
+    "@angular/platform-browser": "2.3.1",
+    "@angular/platform-browser-dynamic": "2.3.1",
+    "@angular/router": "3.3.1",
+    "nativescript-angular": "1.3.0",
+    "nativescript-ngx-fonticon": "file:..",
+    "nativescript-theme-core": "~1.0.2",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "5.0.0-rc.4",
+    "tns-core-modules": "2.4.4"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.5.35",
-    "babel-traverse": "6.8.0",
-    "babel-types": "6.8.1",
-    "babylon": "6.8.0",
-    "filewalker": "0.1.2",
-    "lazy": "1.0.11",
-    "nativescript-dev-typescript": "^0.3.2",
-    "shelljs": "^0.5.3",
-    "typescript": "^2.0.6"
+    "nativescript-dev-android-snapshot": "^0.*.*",
+    "nativescript-dev-typescript": "~0.3.5",
+    "typescript": "~2.0.10",
+    "zone.js": "~0.7.2"
   }
 }
