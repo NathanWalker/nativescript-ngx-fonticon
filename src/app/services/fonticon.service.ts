@@ -1,5 +1,5 @@
 // angular
-import {Injectable} from '@angular/core';
+import {Injectable, Inject, OpaqueToken} from '@angular/core';
 
 // nativescript
 import {knownFolders} from 'file-system';
@@ -7,22 +7,23 @@ import {knownFolders} from 'file-system';
 // libs
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
+export const USE_STORE = new OpaqueToken('USE_STORE');
+
 @Injectable()
 export class TNSFontIconService {
-  public static config: any = {};
   public static debug: boolean = false;
   public filesLoaded: BehaviorSubject<any>;
   public css: any = {}; // font icon collections containing maps of classnames to unicode
   private _currentName: string; // current collection name
 
-  constructor() {
+  constructor(@Inject(USE_STORE) private config: any = {}) {
     this.filesLoaded = new BehaviorSubject(null);
     this.loadCss();
   }
 
   public loadCss(): void {
     let cnt = 0;
-    let fontIconCollections = Object.keys(TNSFontIconService.config);
+    let fontIconCollections = Object.keys(this.config);
     if (TNSFontIconService.debug) {
       console.log(`Collections to load: ${fontIconCollections}`);
     }
@@ -37,7 +38,7 @@ export class TNSFontIconService {
       if (cnt === fontIconCollections.length) {
         this.filesLoaded.next(this.css);
       } else {
-        this.loadFile(TNSFontIconService.config[this._currentName]).then(() => {
+        this.loadFile(this.config[this._currentName]).then(() => {
           cnt++;
           loadFiles();
         });
