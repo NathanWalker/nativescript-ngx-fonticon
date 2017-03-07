@@ -28,6 +28,7 @@
   "devDependencies": {
     "nativescript-dev-android-snapshot": "^0.*.*",
     "nativescript-dev-typescript": "~0.3.5",
+    "tns-core-modules": "2.4.4",
     "typescript": "~2.0.10",
     "zone.js": "~0.7.2"
   }

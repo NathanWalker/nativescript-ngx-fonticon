@@ -30,6 +30,7 @@ Thumbs.db
 
 # Node Files #
 /node_modules
+/src/app/node_modules
 /bower_components
 
 # Coverage #
@@ -53,9 +54,10 @@ __build__/**
 # IDE #
 .idea/
 *.swp
-
+*.tgz
 *.js
 *.js.map
+*.metadata.json
 *.d.ts
 !index.d.ts
 !*.e2e.js

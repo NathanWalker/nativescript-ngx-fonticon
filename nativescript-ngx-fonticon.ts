@@ -1,10 +1,14 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, Provider } from '@angular/core';
 import { TNSFontIconPipe, TNSFontIconPurePipe } from './src/app/pipes/fonticon.pipe';
 import { TNSFontIconService, USE_STORE } from './src/app/services/fonticon.service';
 
 // for manual imports
 export * from './src/app/pipes/fonticon.pipe';
 export * from './src/app/services/fonticon.service';
+
+export class TNSFontIconModuleModuleConfig {
+    fonts?: Provider
+}
 
 @NgModule({
   declarations: [
@@ -18,12 +22,12 @@ export * from './src/app/services/fonticon.service';
 })
 export class TNSFontIconModule {
 
-  static forRoot(providedConfig: any = {}): ModuleWithProviders {
+  static forRoot(providedConfig: TNSFontIconModuleModuleConfig = {}): ModuleWithProviders {
     return {
       ngModule: TNSFontIconModule,
       providers: [
-        TNSFontIconService,
         { provide: USE_STORE, useValue: providedConfig },
+        TNSFontIconService
       ]
     };
   }

@@ -1,11 +1,13 @@
 // angular
-import {Injectable, Inject, OpaqueToken} from '@angular/core';
+import { Injectable, Inject, OpaqueToken } from '@angular/core';
 
 // nativescript
-import {knownFolders} from 'file-system';
+import { knownFolders } from 'file-system';
 
 // libs
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
+import { TNSFontIconModuleModuleConfig } from '../../../nativescript-ngx-fonticon';
 
 export const USE_STORE = new OpaqueToken('USE_STORE');
 
@@ -16,14 +18,14 @@ export class TNSFontIconService {
   public css: any = {}; // font icon collections containing maps of classnames to unicode
   private _currentName: string; // current collection name
 
-  constructor(@Inject(USE_STORE) private config: any = {}) {
+  constructor( @Inject(USE_STORE) private config: TNSFontIconModuleModuleConfig = {}) {
     this.filesLoaded = new BehaviorSubject(null);
     this.loadCss();
   }
 
   public loadCss(): void {
     let cnt = 0;
-    let fontIconCollections = Object.keys(this.config);
+    let fontIconCollections = Object.keys(this.config.fonts);
     if (TNSFontIconService.debug) {
       console.log(`Collections to load: ${fontIconCollections}`);
     }
@@ -38,7 +40,8 @@ export class TNSFontIconService {
       if (cnt === fontIconCollections.length) {
         this.filesLoaded.next(this.css);
       } else {
-        this.loadFile(this.config[this._currentName]).then(() => {
+        let fonts: any = this.config.fonts;
+        this.loadFile(fonts[this._currentName]).then(() => {
           cnt++;
           loadFiles();
         });
@@ -55,10 +58,10 @@ export class TNSFontIconService {
     }
     let cssFile = knownFolders.currentApp().getFile(path);
     return new Promise((resolve, reject) => {
-      cssFile.readText().then((data) => {
+      cssFile.readText().then((data: any) => {
         this.mapCss(data);
         resolve();
-      }, (err) => {
+      }, (err: any) => {
         reject(err);
       });
     });
@@ -66,7 +69,7 @@ export class TNSFontIconService {
 
   private mapCss(data: any): void {
     let sets = data.split('}');
-    let cleanValue = (val) => {
+    let cleanValue = (val: string) => {
       let v = val.split('content:')[1].toLowerCase().replace(/\\e/, '\\ue').replace(/\\f/, '\\uf').trim().replace(/\"/g, '').replace(/;/g, '');
       return v;
     };

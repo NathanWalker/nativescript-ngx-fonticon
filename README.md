@@ -68,7 +68,14 @@ Then modify the css file to isolate just the icon fonts needed. [Watch this vide
 Use the classname prefix as the `key` and the css filename as the value relative to the `app` directory.
 
 ```typescript
-import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
+import { TNSFontIconModule, TNSFontIconModuleModuleConfig } from 'nativescript-ngx-fonticon';
+
+export function icons() {
+  return {
+    'fa': './assets/fonts/font-awesome.css',
+    'ion': './assets/fonts/ionicons.css'
+  };
+}
 
 @NgModule({
 	declarations: [
@@ -80,7 +87,10 @@ import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 	imports: [
 		NativeScriptModule,
 		TNSFontIconModule.forRoot({
-			'fa': 'font-awesome.css'
+			fonts: {
+				provide: TranslateLoader,
+				useFactory: (icons)
+			}
 		})
 	]
 })
@@ -95,6 +105,12 @@ import { TNSFontIconModule, TNSFontIconService } from 'nativescript-ngx-fonticon
 // turn debug on
 TNSFontIconService.debug = true;
 
+export function icons() {
+  return {
+    'fa': './assets/fonts/font-awesome.css'
+  };
+}
+
 @NgModule({
 	declarations: [
 		DemoComponent,
@@ -105,7 +121,10 @@ TNSFontIconService.debug = true;
 	imports: [
 		NativeScriptModule,
 		TNSFontIconModule.forRoot({
-			'fa': 'font-awesome.css'
+			fonts: {
+				provide: TranslateLoader,
+				useFactory: (icons)
+			}
 		})
 	]
 })
