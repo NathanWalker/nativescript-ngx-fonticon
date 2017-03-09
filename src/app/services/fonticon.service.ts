@@ -7,8 +7,6 @@ import { knownFolders } from 'file-system';
 // libs
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-export const FONT_ICON_CONFIG = new OpaqueToken('FONT_ICON_CONFIG');
-
 @Injectable()
 export class TNSFontIconService {
   public static debug: boolean = false;
@@ -16,7 +14,7 @@ export class TNSFontIconService {
   public css: any = {}; // font icon collections containing maps of classnames to unicode
   private _currentName: string; // current collection name
 
-  constructor( @Inject(FONT_ICON_CONFIG) private config: any) {
+  constructor(private config: any) {
     this.filesLoaded = new BehaviorSubject(null);
     this.loadCss();
   }

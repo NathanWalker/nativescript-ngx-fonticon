@@ -70,14 +70,6 @@ Use the classname prefix as the `key` and the css filename as the value relative
 ```typescript
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 
-export const icons = function () {
-  return {
-    'fa': './assets/font-awesome.css',
-    'ion': './assets/ionicons.css'
-  };
-};
-
-
 @NgModule({
 	declarations: [
 		DemoComponent,
@@ -87,7 +79,10 @@ export const icons = function () {
 	],
 	imports: [
 		NativeScriptModule,
-		TNSFontIconModule.forRoot(icons)
+		TNSFontIconModule.forRoot({
+			'fa': './assets/font-awesome.css',
+			'ion': './assets/ionicons.css'
+		})
 	]
 })
 ```
@@ -101,12 +96,6 @@ import { TNSFontIconModule, TNSFontIconService } from 'nativescript-ngx-fonticon
 // turn debug on
 TNSFontIconService.debug = true;
 
-export const icons = function () {
-  return {
-    'fa': './assets/font-awesome.css'
-  };
-};
-
 @NgModule({
 	declarations: [
 		DemoComponent,
@@ -116,7 +105,9 @@ export const icons = function () {
 	],
 	imports: [
 		NativeScriptModule,
-		TNSFontIconModule.forRoot(icons)
+		TNSFontIconModule.forRoot({
+			'fa': './assets/font-awesome.css'
+		})
 	]
 })
 ```
