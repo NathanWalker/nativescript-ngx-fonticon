@@ -11,8 +11,8 @@ import { AppComponent } from "./app.component";
   imports: [
     NativeScriptModule,
     TNSFontIconModule.forRoot({
-      'fa': 'font-awesome.css',
-      'ion': 'ionicons.css'
+      'fa': './assets/font-awesome.css',
+      'ion': './assets/ionicons.css'
     })
   ],
   declarations: [

@@ -1,6 +1,6 @@
 {
     "name": "nativescript-ngx-fonticon",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Use custom font icon collections seamlessly with NativeScript for Angular.",
     "main": "nativescript-ngx-fonticon",
     "module": "nativescript-ngx-fonticon.js",
@@ -44,7 +44,7 @@
     "homepage": "https://github.com/NathanWalker/nativescript-ngx-fonticon#readme",
     "scripts": {
         "prebuild": "npm i && cd src && npm i",
-        "build": "ngc",
+        "build": "tsc",
         "clean": "rm -rf src/platforms",
         "demo.ios": "npm run preparedemo; cd src; tns run ios --emulator",
         "demo.android": "npm run preparedemo; cd src; tns run android --emulator",
@@ -58,25 +58,21 @@
     "devDependencies": {
         "@angular/common": "2.4.3",
         "@angular/compiler": "2.4.3",
-        "@angular/compiler-cli": "2.4.3",
         "@angular/core": "2.4.3",
         "@angular/forms": "2.4.3",
         "@angular/http": "2.4.3",
         "@angular/platform-browser": "2.4.3",
         "@angular/platform-browser-dynamic": "2.4.3",
-        "@angular/platform-server": "2.4.3",
         "@angular/router": "3.4.3",
-        "@types/hammerjs": "2.0.34",
         "@types/jasmine": "2.5.41",
-        "@types/node": "7.0.5",
         "nativescript-angular": "1.4.1",
         "reflect-metadata": "0.1.9",
         "rimraf": "^2.5.1",
         "rxjs": "5.1.1",
-        "tns-core-modules": "2.4.4",
+        "tns-core-modules": "2.5.1",
         "traceur": "^0.0.91",
         "typedoc": "^0.3.12",
-        "typescript": "~2.0.10",
+        "typescript": "~2.1.0",
         "zone.js": "~0.7.2"
     }
 }
