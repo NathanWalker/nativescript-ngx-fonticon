@@ -18,11 +18,11 @@ export * from './src/app/services/fonticon.service';
 })
 export class TNSFontIconModule {
 
-  static forRoot(providedConfig: any = {}): ModuleWithProviders {
+  static forRoot(providedConfig: Function): ModuleWithProviders {
     return {
       ngModule: TNSFontIconModule,
       providers: [
-        { provide: FONT_ICON_CONFIG, useValue: providedConfig },
+        { provide: FONT_ICON_CONFIG, useFactory: providedConfig },
         TNSFontIconService
       ]
     };
