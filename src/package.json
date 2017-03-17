@@ -6,7 +6,10 @@
   "nativescript": {
     "id": "org.nativescript.sample",
     "tns-ios": {
-      "version": "2.4.0"
+      "version": "2.5.0"
+    },
+    "tns-android": {
+      "version": "2.5.0"
     }
   },
   "dependencies": {
@@ -19,13 +22,17 @@
     "@angular/platform-browser-dynamic": "2.4.3",
     "@angular/router": "3.4.3",
     "nativescript-angular": "1.4.0",
-    "nativescript-ngx-fonticon": "file:///Users/nathan/Documents/github/NathanWalker/nativescript-ngx-fonticon",
+    "nativescript-ngx-fonticon": "../",
     "nativescript-theme-core": "~1.0.2",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~5.0.1",
     "tns-core-modules": "2.5.1"
   },
   "devDependencies": {
+    "babel-traverse": "6.23.1",
+    "babel-types": "6.23.0",
+    "babylon": "6.16.1",
+    "lazy": "1.0.11",
     "nativescript-dev-android-snapshot": "^0.*.*",
     "nativescript-dev-typescript": "~0.3.5",
     "tns-core-modules": "2.5.2",

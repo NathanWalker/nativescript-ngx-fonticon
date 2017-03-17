@@ -1,18 +1,29 @@
 {
     "compilerOptions": {
         "noImplicitAny": false,
-        "module": "commonjs",
+        "module": "es2015",
         "target": "es5",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "noEmitHelpers": true,
-        "noEmitOnError": false,
         "declaration": true,
-        "lib": ["es2016"]
+        "moduleResolution": "node",
+        "types": [
+        ],
+        "lib": ["es2015", "dom"]
     },
+    "files": [
+        "./references.d.ts",
+        "nativescript-ngx-fonticon.ts",
+        "./src/app/pipes/fonticon.pipe.ts",
+        "./src/app/services/fonticon.service.ts"
+    ],
     "exclude": [
         "node_modules",
-        "src",
+        "src/node_modules",
         "bundles"
-    ]
+    ],
+    "angularCompilerOptions": {
+        "strictMetadataEmit": true,
+        "skipTemplateCodegen": true
+    }
 }
