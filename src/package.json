@@ -6,7 +6,10 @@
   "nativescript": {
     "id": "org.nativescript.sample",
     "tns-ios": {
-      "version": "2.4.0"
+      "version": "2.5.0"
+    },
+    "tns-android": {
+      "version": "2.5.0"
     }
   },
   "dependencies": {
@@ -26,6 +29,10 @@
     "tns-core-modules": "2.5.1"
   },
   "devDependencies": {
+    "babel-traverse": "6.23.1",
+    "babel-types": "6.23.0",
+    "babylon": "6.16.1",
+    "lazy": "1.0.11",
     "nativescript-dev-android-snapshot": "^0.*.*",
     "nativescript-dev-typescript": "~0.3.5",
     "tns-core-modules": "2.5.2",
