@@ -44,7 +44,8 @@
     "homepage": "https://github.com/NathanWalker/nativescript-ngx-fonticon#readme",
     "scripts": {
         "prebuild": "npm i && cd src && npm i",
-        "build": "tsc",
+        "build": "npm run tsc",
+        "tsc": "tsc",
         "clean": "rm -rf src/platforms",
         "demo.ios": "npm run preparedemo; cd src; tns run ios --emulator",
         "demo.android": "npm run preparedemo; cd src; tns run android --emulator",
