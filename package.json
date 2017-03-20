@@ -44,7 +44,7 @@
     "homepage": "https://github.com/NathanWalker/nativescript-ngx-fonticon#readme",
     "scripts": {
         "prebuild": "npm i && cd src && npm i",
-        "build": "npm run tsc",
+        "build": "ngc",
         "tsc": "tsc",
         "clean": "rm -rf src/platforms",
         "demo.ios": "npm run preparedemo; cd src; tns run ios --emulator",
@@ -59,6 +59,7 @@
     "devDependencies": {
         "@angular/common": "2.4.9",
         "@angular/compiler": "2.4.9",
+        "@angular/compiler-cli": "2.4.9",
         "@angular/core": "2.4.9",
         "@angular/forms": "2.4.9",
         "@angular/http": "2.4.9",
