@@ -48,6 +48,11 @@ Thumbs.db
 __build__/**
 .webpack.json
 
+# sample app
+sampleApp/hooks/
+sampleApp/node_modules/
+sampleApp/platforms/
+
 # Doc #
 /doc/
 

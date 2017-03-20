@@ -49,6 +49,7 @@ src/hooks
 src/lib
 src/node_modules
 src/platforms
+sampleApp/
 
 Thumbs.db
 .DS_Store
