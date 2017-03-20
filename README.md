@@ -2,6 +2,7 @@
 
 [![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![Build Status](https://martinreinhardt-online.de/jenkins/buildStatus/icon?job=NPM/nativescript-ngx-fonticon/master)](https://martinreinhardt-online.de/jenkins/blue/organizations/jenkins/NPM%2Fnativescript-ngx-fonticon/activity)
 
 ### The Problem
 
