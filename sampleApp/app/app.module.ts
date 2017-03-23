@@ -18,7 +18,7 @@ import { ItemDetailComponent } from "./item/item-detail.component";
         TNSFontIconModule.forRoot({
             'fa': './fonts/font-awesome.css',
             'ion': './fonts/ionicons.css'
-        }),
+        })
     ],
     declarations: [
         AppComponent,

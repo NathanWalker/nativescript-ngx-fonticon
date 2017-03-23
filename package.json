@@ -47,6 +47,7 @@
         "build": "ngc",
         "tsc": "tsc",
         "clean": "rm -rf src/platforms",
+        "pree2e": "npm run build",
         "e2e": "cd sampleApp && npm run clean && tns plugin remove nativescript-ngx-fonticon && tns plugin add .. && npm run build",
         "demo.ios": "npm run preparedemo; cd src; tns run ios --emulator",
         "demo.android": "npm run preparedemo; cd src; tns run android --emulator",

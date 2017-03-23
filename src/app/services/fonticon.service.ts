@@ -15,8 +15,8 @@ export class TNSFontIconService {
   public filesLoaded: BehaviorSubject<any>;
   public css: any = {}; // font icon collections containing maps of classnames to unicode
   private _currentName: string; // current collection name
-
-  constructor(@Inject(USE_STORE) private config: any) {
+  
+  constructor( @Inject(USE_STORE) private config: any) {
     this.filesLoaded = new BehaviorSubject(null);
     this.loadCss();
   }
