@@ -4,30 +4,36 @@ sudo: false
 language: objective-c
 
 env:
-  - NODE_VERSION="4"
-  - NODE_VERSION="5"
-  - NODE_VERSION="6"
-
-licenses:
-  - 'android-sdk-preview-license-52d11cd2'
-  - 'android-sdk-license-.+'
+  - NODE_VERSION="4" NPM_VERSION="3" TNS_VERSION="rc"
+  - NODE_VERSION="5" NPM_VERSION="3" TNS_VERSION="rc"
+  - NODE_VERSION="6" NPM_VERSION="3" TNS_VERSION="rc"
 
 script:
-  - export ANDROID_HOME=/usr/local/opt/android-sdk
-  - export PATH=$PATH:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
+  - export ANDROID_HOME=/usr/local/share/android-sdk
+  - export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
   - npm run build
   - cd src && npm i .. && tns build android && tns build ios
+  
 before_install:
-  - export ANDROID_HOME=/usr/local/opt/android-sdk
-  - export PATH=$PATH:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
+  - export ANDROID_HOME=/usr/local/share/android-sdk
+  - export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
   - wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
   - source ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION
   - PATH="`npm bin`:`npm bin -g`:$PATH"
   - brew update > /dev/null;
-  - brew install android-sdk dash gnu-sed jpeg python3;
-  - echo y | android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.3,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui;
-  - npm install -g npm
-  - npm install -g nativescript
+  - brew install Caskroom/cask/android-sdk
+  - echo y | sdkmanager 'tools'
+  - echo y | sdkmanager 'platform-tools'
+  - echo y | sdkmanager 'build-tools;25.0.2'
+  - echo y | sdkmanager 'platforms;android-25'
+  - echo y | sdkmanager 'extras;android;m2repository'
+  - echo y | sdkmanager 'extras;google;google_play_services'
+  - echo y | sdkmanager 'extras;google;m2repository'
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license" 
+  - npm install -g npm@$NPM_VERSION
+  - npm install -g nativescript@$TNS_VERSION
   - npm install
   # CocoaPods
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
