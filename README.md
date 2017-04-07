@@ -9,14 +9,14 @@
 You can use icon fonts with NativeScript by combining a class with a unicode reference in the view:
 
 * css
-```
+```css
 .fa {
   font-family: FontAwesome;
 }
 ```
 
 * view
-```
+```xml
 <Label class="fa" text="\uf293"></Label>
 ```
 
@@ -26,13 +26,13 @@ This works but keeping up with unicodes is not fun.
 
 With this plugin, you can instead reference the `fonticon` by the specific classname:
 
-```
+```xml
 <Label class="fa" [text]="'fa-bluetooth' | fonticon"></Label> 
 ```
 
 ## Install
 
-```
+```bash
 npm install nativescript-ngx-fonticon --save
 ```
 
@@ -48,7 +48,7 @@ app/fonts/fontawesome-webfont.ttf
 
 * Create base class in `app.css` global file, for example:
 
-```
+```css
 .fa {
   font-family: FontAwesome, fontawesome-webfont;
 }
@@ -117,7 +117,7 @@ TNSFontIconService.debug = true;
 
 It is important to inject the service into the constructor of your root component. Otherwise Angular's DI system will not instantiate your service.
 
-```
+```typescript
 import { Component } from '@angular/core';
 import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 
