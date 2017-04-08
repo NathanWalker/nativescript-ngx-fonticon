@@ -53,7 +53,12 @@ sampleApp/
 
 Thumbs.db
 .DS_Store
+*.ts
 !*.d.ts
+src/app/pipes/*.ts
+!src/app/pipes/*.d.ts
+src/app/services/*.ts
+!src/app/services/*.d.ts
 references.d.ts
 *.spec.*
 *.e2e.*
