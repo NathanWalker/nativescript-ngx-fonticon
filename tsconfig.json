@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "noImplicitAny": false,
-        "module": "es2015",
+        "module": "commonjs",
         "target": "es5",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
