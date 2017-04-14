@@ -9,7 +9,7 @@
         "declaration": true,
         "noEmitHelpers": true,
         "noEmitOnError": true,
-        "importHelpers": true,
+        "importHelpers": false,
         "types": [],
         "lib": [
             "dom",
