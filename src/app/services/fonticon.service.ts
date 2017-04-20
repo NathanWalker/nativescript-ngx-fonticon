@@ -7,14 +7,16 @@ import { knownFolders } from 'file-system';
 // libs
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
+export const USE_STORE = new OpaqueToken('USE_STORE');
+
 @Injectable()
 export class TNSFontIconService {
   public static debug: boolean = false;
   public filesLoaded: BehaviorSubject<any>;
   public css: any = {}; // font icon collections containing maps of classnames to unicode
   private _currentName: string; // current collection name
-
-  constructor(private config: any) {
+  
+  constructor( @Inject(USE_STORE) private config: any) {
     this.filesLoaded = new BehaviorSubject(null);
     this.loadCss();
   }

@@ -1,15 +1,21 @@
 {
     "compilerOptions": {
         "noImplicitAny": false,
-        "module": "es2015",
+        "module": "commonjs",
         "target": "es5",
+        "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "declaration": true,
-        "moduleResolution": "node",
-        "types": [
-        ],
-        "lib": ["es2015", "dom"]
+        "noEmitHelpers": true,
+        "noEmitOnError": true,
+        "importHelpers": false,
+        "types": [],
+        "lib": [
+            "dom",
+            "es2015",
+            "es2015.iterable"
+        ]
     },
     "files": [
         "./references.d.ts",

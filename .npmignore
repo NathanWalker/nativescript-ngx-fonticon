@@ -26,6 +26,11 @@ build/Release
 #IntelliJ configuration files
 .idea
 
+# CI build
+*.yml
+Jenkinsfile
+
+# build
 node_modules
 dist
 dev
@@ -44,14 +49,16 @@ src/hooks
 src/lib
 src/node_modules
 src/platforms
+sampleApp/
 
 Thumbs.db
 .DS_Store
-*.yml
-!src/app/pipes/*
-!src/app/services/*
 *.ts
 !*.d.ts
+src/app/pipes/*.ts
+!src/app/pipes/*.d.ts
+src/app/services/*.ts
+!src/app/services/*.d.ts
 references.d.ts
 *.spec.*
 *.e2e.*
