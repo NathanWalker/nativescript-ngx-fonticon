@@ -1,3 +1,13 @@
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v2.2.0...v2.2.1) (2017-05-22)
+
+
+### Features
+
+* **nativescript-3:** Add matcher for nativescript 3 and Angular 4 ([d21bb3c](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/d21bb3c))
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v2.1.2...v2.2.0) (2017-04-20)
 
