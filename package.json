@@ -60,8 +60,7 @@
     "release:major": "npm run release:pre && npm version major && npm run release:post && npm run version-and-push",
     "release:minor": "npm run release:pre && npm version minor && npm run release:post && npm run version-and-push",
     "release:patch": "npm run release:pre && npm version patch && npm run release:post && npm run version-and-push",
-    "version-and-push": "git push origin && git push origin --tags && npm run publish",
-    "publish": "git push && npm publish"
+    "version-and-push": "git push origin && git push origin --tags && git push && npm publish"
   },
   "dependencies": {
     "tslib": "1.6.0"
