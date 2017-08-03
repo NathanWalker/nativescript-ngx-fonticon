@@ -1,3 +1,15 @@
+<a name="2.2.2"></a>
+## [2.2.2](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v2.2.1...v2.2.2) (2017-08-03)
+
+
+### Bug Fixes
+
+* nativescript-angular peer dep fix ([78c82a1](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/78c82a1))
+* **semver:** Fix semver issues ([2b82c69](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/2b82c69))
+* **semver:** Support next nativescript-angular ([3a80d41](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/3a80d41))
+
+
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v2.2.0...v2.2.1) (2017-05-22)
 
