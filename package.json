@@ -1,6 +1,6 @@
 {
   "name": "nativescript-ngx-fonticon",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Use custom font icon collections seamlessly with NativeScript for Angular.",
   "main": "nativescript-ngx-fonticon",
   "module": "nativescript-ngx-fonticon.js",
