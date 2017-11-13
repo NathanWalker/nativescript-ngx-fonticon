@@ -1,5 +1,5 @@
 // angular
-import { Injectable, Inject, OpaqueToken } from '@angular/core';
+import { Injectable, Inject, InjectionToken } from '@angular/core';
 
 // nativescript
 import { knownFolders } from 'file-system';
@@ -7,7 +7,7 @@ import { knownFolders } from 'file-system';
 // libs
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-export const USE_STORE = new OpaqueToken('USE_STORE');
+export const USE_STORE = new InjectionToken('USE_STORE');
 
 @Injectable()
 export class TNSFontIconService {

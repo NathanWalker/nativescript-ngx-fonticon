@@ -7,18 +7,20 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "declaration": true,
+        "sourceMap": false,
         "noEmitHelpers": true,
         "noEmitOnError": true,
-        "importHelpers": false,
-        "types": [],
-        "lib": [
-            "dom",
-            "es2015",
-            "es2015.iterable"
-        ]
+        "skipLibCheck": true,
+        "lib": ["es2017", "dom"],
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+            "./node_modules/tns-core-modules/*",
+            "./node_modules/*"
+            ]
+        }
     },
     "files": [
-        "./references.d.ts",
         "nativescript-ngx-fonticon.ts",
         "./src/app/pipes/fonticon.pipe.ts",
         "./src/app/services/fonticon.service.ts"

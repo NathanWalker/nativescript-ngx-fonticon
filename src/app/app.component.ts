@@ -1,6 +1,5 @@
 ﻿// angular 
 import { Component, AfterViewInit, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 // app

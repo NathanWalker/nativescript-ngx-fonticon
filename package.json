@@ -1,14 +1,14 @@
 {
   "name": "nativescript-ngx-fonticon",
-  "version": "2.2.3",
+  "version": "4.0.0",
   "description": "Use custom font icon collections seamlessly with NativeScript for Angular.",
   "main": "nativescript-ngx-fonticon",
   "module": "nativescript-ngx-fonticon.js",
   "typings": "nativescript-ngx-fonticon.d.ts",
   "nativescript": {
     "platforms": {
-      "android": "2.4.1",
-      "ios": "2.4.0"
+      "android": "3.0.0",
+      "ios": "3.0.0"
     }
   },
   "repository": {
@@ -62,33 +62,30 @@
     "release:patch": "npm run release:pre && npm version patch && npm run release:post && npm run version-and-push",
     "version-and-push": "git push origin && git push origin --tags && git push && npm publish"
   },
-  "dependencies": {
-    "tslib": "1.6.0"
-  },
   "peerDependencies": {
     "@angular/core": ">=2.0.0 || >=4.0.0 || >=4.1.0 || >=4.2.0",
-    "nativescript-angular": ">=1.3.0 || >=3.0.0 || >=3.1.0 || >=3.2.0",
+    "nativescript-angular": ">=1.3.0 || >=3.0.0 || >=3.1.0 || >=3.2.0 || >=4.4.0",
     "tns-core-modules": ">=2.4.4 || >=3.0.0"
   },
   "devDependencies": {
-    "@angular/common": "2.4.9",
-    "@angular/compiler": "2.4.9",
-    "@angular/compiler-cli": "2.4.9",
-    "@angular/core": "2.4.9",
-    "@angular/forms": "2.4.9",
-    "@angular/http": "2.4.9",
-    "@angular/platform-browser": "2.4.9",
-    "@angular/platform-browser-dynamic": "2.4.9",
-    "@angular/router": "3.4.9",
+    "@angular/common": "~4.4.4",
+    "@angular/compiler": "~4.4.4",
+    "@angular/compiler-cli": "~4.4.4",
+    "@angular/core": "~4.4.4",
+    "@angular/forms": "~4.4.4",
+    "@angular/http": "~4.4.4",
+    "@angular/platform-browser": "~4.4.4",
+    "@angular/platform-browser-dynamic": "~4.4.4",
+    "@angular/router": "~4.4.4",
     "conventional-changelog-cli": "1.3.1",
-    "nativescript-angular": "1.4.1",
+    "nativescript-angular": "~4.4.1",
     "reflect-metadata": "0.1.9",
     "rimraf": "^2.5.1",
-    "rxjs": "5.1.1",
-    "tns-core-modules": "2.5.1",
+    "rxjs": "~5.4.3",
+    "tns-core-modules": "~3.2.0",
     "traceur": "^0.0.91",
     "typedoc": "^0.3.12",
-    "typescript": "~2.1.0",
-    "zone.js": "~0.7.2"
+    "typescript": "^2.5.1",
+    "zone.js": "~0.8.17"
   }
 }
