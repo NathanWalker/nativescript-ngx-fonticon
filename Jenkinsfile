@@ -1,7 +1,9 @@
 properties properties: [
         [$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '30', numToKeepStr: '10']],
-        [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/NathanWalker/nativescript-ngx-fonticon'],
 ]
+
+@Library('mare-build-library')
+def nodeJS = new de.mare.ci.jenkins.NodeJS()
 
 timeout(60) {
     node('nativescript') {
@@ -31,13 +33,11 @@ timeout(60) {
             }
 
             stage('Publish NPM snapshot') {
-                def currentVersion = sh(returnStdout: true, script: "npm version | grep \"{\" | tr -s ':'  | cut -d \"'\" -f 4").trim()
-                def newVersion = "${currentVersion}-${branchName}-${buildNumber}"
-                sh "npm version ${newVersion} --no-git-tag-version && npm publish --tag next"
+                nodeJS.publishSnapshot('.', buildNumber, branchName)
             }
 
         } catch (e) {
-            mail subject: "${env.JOB_NAME} (${env.BUILD_NUMBER}): Error on build", to: 'github@martinreinhardt-online.de', body: "Please go to ${env.BUILD_URL}."
+            mail subject: "${env.JOB_NAME} (${buildNumber}): Error on build", to: 'github@martinreinhardt-online.de', body: "Please go to ${buildUrl}."
             throw e
         }
     }
