@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+      "target": "es2015",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "noEmitHelpers": true,
+      "removeComments": true,
+      "noEmitOnError": true,
+      "lib": [
+        "es2017",
+        "dom"
+      ],
+      "skipLibCheck": true,
+      "baseUrl": ".",
+      "paths": {
+        "~/*": [
+          "app/*"
+        ],
+        "*": [
+          "./node_modules/tns-core-modules/*",
+          "./node_modules/*"
+        ]
+      }
+    },
+    "include": [
+      "references.d.ts",
+      "app/main.aot.ts",
+      "app/vendor*",
+      "app/**/*.module.ts"
+    ]
+  }
+  

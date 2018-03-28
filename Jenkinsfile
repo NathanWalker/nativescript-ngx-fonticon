@@ -25,7 +25,7 @@ timeout(60) {
             }
 
             stage('Build') {
-                sh "npm run clean && npm run build"
+                sh "cd src && npm run build"
             }
 
             stage('Test') {

@@ -1,26 +1,34 @@
 {
     "compilerOptions": {
+        "noImplicitAny": false,
         "module": "commonjs",
         "target": "es5",
-        "experimentalDecorators": true,
+        "moduleResolution": "node",
         "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "declaration": true,
+        "sourceMap": false,
         "noEmitHelpers": true,
         "noEmitOnError": true,
-        "lib": [
-            "es2017",
-            "dom"
-        ],
+        "skipLibCheck": true,
+        "lib": ["es2017", "dom"],
         "baseUrl": ".",
         "paths": {
             "*": [
-                "./node_modules/tns-core-modules/*",
-                "./node_modules/*"
+            "./node_modules/tns-core-modules/*",
+            "./node_modules/*"
             ]
         }
     },
+    "files": [
+        "nativescript-ngx-fonticon.ts"
+    ],
     "exclude": [
         "node_modules",
-        "platforms",
-        "**/*.aot.ts"
-    ]
+        "bundles"
+    ],
+    "angularCompilerOptions": {
+        "strictMetadataEmit": true,
+        "skipTemplateCodegen": true
+    }
 }

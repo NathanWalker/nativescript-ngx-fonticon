@@ -49,9 +49,9 @@ __build__/**
 .webpack.json
 
 # sample app
-sampleApp/hooks/
-sampleApp/node_modules/
-sampleApp/platforms/
+demo/hooks/
+demo/node_modules/
+demo/platforms/
 
 # Doc #
 /doc/
@@ -68,8 +68,5 @@ sampleApp/platforms/
 !*.e2e.js
 !karma*.js
 !test-main.js
-src/lib
-src/platforms
-src/hooks
 src/node_modules
 package-lock.json

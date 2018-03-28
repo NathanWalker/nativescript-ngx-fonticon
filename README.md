@@ -115,20 +115,15 @@ TNSFontIconService.debug = true;
 
 * Setup your component
 
-It is important to inject the service into the constructor of your root component. Otherwise Angular's DI system will not instantiate your service.
-
 ```typescript
 import { Component } from '@angular/core';
-import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 
 @Component({
   selector: 'demo',
   template: '<Label class="fa" [text]="'fa-bluetooth' | fonticon"></Label> '
 })
 export class DemoComponent {
-  constructor(private fonticon: TNSFontIconService) {
-    // ^ IMPORTANT to cause Angular's DI system to instantiate the service!
-  }
+
 }
 ```
 

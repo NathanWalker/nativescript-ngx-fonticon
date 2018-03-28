@@ -1,40 +1,87 @@
 {
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
-  "readme": "NativeScript Application",
-  "repository": "<fill-your-repository-here>",
+  "name": "nativescript-ngx-fonticon",
+  "version": "4.1.0",
+  "description": "Use custom font icon collections seamlessly with NativeScript for Angular.",
+  "main": "nativescript-ngx-fonticon",
+  "module": "nativescript-ngx-fonticon.js",
+  "typings": "nativescript-ngx-fonticon.d.ts",
   "nativescript": {
-    "id": "org.nativescript.sample",
-    "tns-ios": {
-      "version": "3.2.0"
-    },
-    "tns-android": {
-      "version": "3.2.0"
+    "platforms": {
+      "android": "3.0.0",
+      "ios": "3.0.0"
     }
   },
-  "dependencies": {
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanWalker/nativescript-ngx-fonticon.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "ng",
+    "ngx",
+    "ng2",
+    "nativescript",
+    "icon",
+    "font"
+  ],
+  "author": "Nathan Walker <walkerrunpdx@gmail.com>",
+  "contributors": [
+    {
+      "name": "Nathanael Anderson",
+      "email": "nathan@master-technology",
+      "url": "https://github.com/nathanaela"
+    },
+    {
+      "name": "Martin Reinhardt",
+      "email": "contact@martinreinhardt-online.de",
+      "url": "https://github.com/hypery2k"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NathanWalker/nativescript-ngx-fonticon/issues"
+  },
+  "homepage": "https://github.com/NathanWalker/nativescript-ngx-fonticon#readme",
+  "scripts": {
+    "prebuild": "npm i",
+    "build": "ngc",
+    "tsc": "tsc",
+    "demo.ios": "npm run build; cd ../demo; tns run ios --emulator",
+    "demo.android": "npm run build; cd ../demo; tns run android --emulator",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog:add": "git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md'",
+    "release:pre": "npm run test",
+    "release:post": "npm run changelog && npm run changelog:add",
+    "release:major": "npm run release:pre && npm version major && npm run release:post && npm run version-and-push",
+    "release:minor": "npm run release:pre && npm version minor && npm run release:post && npm run version-and-push",
+    "release:patch": "npm run release:pre && npm version patch && npm run release:post && npm run version-and-push",
+    "version-and-push": "git push origin && git push origin --tags && git push && npm publish"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=2.0.0 || >=4.0.0 || >=4.1.0 || >=4.2.0",
+    "nativescript-angular": ">=1.3.0 || >=3.0.0 || >=3.1.0 || >=3.2.0 || >=4.4.0",
+    "tns-core-modules": ">=2.4.4 || >=3.0.0"
+  },
+  "devDependencies": {
     "@angular/common": "~4.4.4",
     "@angular/compiler": "~4.4.4",
+    "@angular/compiler-cli": "~4.4.4",
     "@angular/core": "~4.4.4",
     "@angular/forms": "~4.4.4",
     "@angular/http": "~4.4.4",
     "@angular/platform-browser": "~4.4.4",
+    "@angular/platform-browser-dynamic": "~4.4.4",
     "@angular/router": "~4.4.4",
+    "conventional-changelog-cli": "1.3.1",
     "nativescript-angular": "~4.4.1",
-    "nativescript-theme-core": "~1.0.2",
-    "reflect-metadata": "~0.1.8",
+    "reflect-metadata": "0.1.9",
+    "rimraf": "^2.5.1",
     "rxjs": "~5.4.3",
     "tns-core-modules": "~3.2.0",
+    "traceur": "^0.0.91",
+    "typedoc": "^0.3.12",
+    "typescript": "^2.5.1",
     "zone.js": "~0.8.17"
-  },
-  "devDependencies": {
-    "babel-traverse": "6.23.1",
-    "babel-types": "6.23.0",
-    "babylon": "6.16.1",
-    "lazy": "1.0.11",
-    "nativescript-dev-android-snapshot": "^0.*.*",
-    "nativescript-dev-typescript": "~0.5.0",
-    "tns-core-modules": "~3.2.0",
-    "typescript": "^2.5.1"
   }
 }
