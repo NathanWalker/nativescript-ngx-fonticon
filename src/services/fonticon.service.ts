@@ -5,7 +5,7 @@ import { Injectable, Inject, InjectionToken } from '@angular/core';
 import { knownFolders } from 'file-system';
 
 // libs
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 
 export const USE_STORE = new InjectionToken('USE_STORE');
 
