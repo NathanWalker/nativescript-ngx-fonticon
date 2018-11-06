@@ -74,7 +74,7 @@ export class TNSFontIconPurePipe implements PipeTransform {
 function getCollectionName(className: string, args: any[]): string {
   if (args && args.length && args[0] !== null) {
     return args[0];
-  } else if (className && className.indexOf('-') > -1) {
+  } else if (className && typeof className === 'string' && className.indexOf('-') > -1) {
     // derive from classname
     return className.split('-')[0];
   } else {
