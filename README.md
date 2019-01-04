@@ -66,7 +66,7 @@ Then modify the css file to isolate just the icon fonts needed. [Watch this vide
 
 * Import the `TNSFontIconModule` passing a configuration with the location to the `.css` file to `forRoot`:
 
-Use the classname prefix as the `key` and the css filename as the value relative to the `app` directory.
+Use the classname prefix as the `key` and the css filename as the value relative to directory where your `main.ts` is.
 
 ```typescript
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
