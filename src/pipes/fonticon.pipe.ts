@@ -13,7 +13,7 @@ export class TNSFontIconPipe implements PipeTransform, OnDestroy {
 
   constructor(private fonticon: TNSFontIconService, private _ref: ChangeDetectorRef) { }
 
-  transform(className: string, args: any[]) {
+  transform(className: string, args?: any[]) {
     if (!this._collectionName)
       this._collectionName = getCollectionName(className, args);
 
