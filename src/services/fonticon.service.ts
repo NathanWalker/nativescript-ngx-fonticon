@@ -79,7 +79,7 @@ export class TNSFontIconService {
       if (pair[1]) {
         let value = cleanValue(pair[1]);
         for (let key of keys) {
-          key = key.trim().slice(1).split(':before')[0];
+          key = key.trim().slice(1).split(':')[0];
           this.css[this._currentName][key] = String.fromCharCode(parseInt(value.substring(2), 16));
           if (TNSFontIconService.debug) {
             console.log(`${key}: ${value}`);
