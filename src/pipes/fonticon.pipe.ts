@@ -58,7 +58,7 @@ export class TNSFontIconPurePipe implements PipeTransform {
 
   constructor(private fonticon: TNSFontIconService) { }
 
-  transform(className: string, args: any[]) {
+  transform(className: string, args?: any[]) {
     if (!this._collectionName)
       this._collectionName = getCollectionName(className, args);
     
