@@ -77,10 +77,11 @@ export class TNSFontIconService {
           configKey
       );
     }
+    let that = this;
     return new Promise(function(resolve, reject) {
       try {
-        var cssData = this.config[configKey];
-        this.mapCss(cssData);
+        var cssData = that.config[configKey];
+        that.mapCss(cssData);
         resolve();
       } catch (e) {
         reject(e);
