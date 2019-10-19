@@ -1,3 +1,25 @@
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v4.2.0...v5.0.0) (2019-10-19)
+
+
+### Bug Fixes
+
+* **angular:** transform args should be optional ([#55](https://github.com/NathanWalker/nativescript-ngx-fonticon/issues/55)) ([feeda29](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/feeda29))
+* **pipe:** check if className is a string ([eccecc6](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/eccecc6))
+* **Security:** Resolve security issues ([0ec2c09](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/0ec2c09))
+
+
+
+<a name="4.2.0"></a>
+# [4.2.0](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v4.1.1...v4.2.0) (2018-05-09)
+
+
+
+<a name="4.1.1"></a>
+## [4.1.1](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v4.1.0...v4.1.1) (2018-05-09)
+
+
+
 <a name="4.1.0"></a>
 # [4.1.0](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v4.0.0...v4.1.0) (2018-03-28)
 
