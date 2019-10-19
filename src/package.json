@@ -74,8 +74,8 @@
     "rimraf": "^2.5.1",
     "rxjs": "~6.1.0",
     "tns-core-modules": "~4.0.0",
-    "traceur": "^0.0.91",
-    "typedoc": "^0.3.12",
+    "traceur": "0.0.111",
+    "typedoc": "^0.15.0",
     "typescript": "2.7.2",
     "zone.js": "~0.8.26"
   }
