@@ -1,3 +1,8 @@
+<a name="5.0.2"></a>
+## [5.0.2](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v5.0.0...v5.0.2) (2019-10-31)
+
+
+
 <a name="5.0.0"></a>
 # [5.0.0](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v4.2.0...v5.0.0) (2019-10-19)
 
@@ -46,9 +51,9 @@
 
 ### Bug Fixes
 
-* nativescript-angular peer dep fix ([78c82a1](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/78c82a1))
 * **semver:** Fix semver issues ([2b82c69](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/2b82c69))
 * **semver:** Support next nativescript-angular ([3a80d41](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/3a80d41))
+* nativescript-angular peer dep fix ([78c82a1](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/78c82a1))
 
 
 
@@ -68,23 +73,23 @@
 
 ### Bug Fixes
 
-* allow no semi-colon ([fdbf961](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/fdbf961))
-* make it compatible with minified css ([598a3a7](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/598a3a7))
-* make it work with uppercase codes ([512c249](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/512c249))
-* publish with no .ts files ([9053443](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/9053443))
 * **compile-error:** Adding tslib as dependency ([51dd2e9](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/51dd2e9)), closes [#15](https://github.com/NathanWalker/nativescript-ngx-fonticon/issues/15)
 * **extends-error:** Use tslib ([5ffdab6](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/5ffdab6)), closes [#15](https://github.com/NathanWalker/nativescript-ngx-fonticon/issues/15)
 * **webpack-build:** Use angular compiler to generate metadata ([a682769](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/a682769)), closes [#15](https://github.com/NathanWalker/nativescript-ngx-fonticon/issues/15)
 * **webpack-error:** Adding basic sample app for testing ([e69a5e5](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/e69a5e5)), closes [#15](https://github.com/NathanWalker/nativescript-ngx-fonticon/issues/15)
 * **webpack-error:** Use OpaqueToken for injection ([e25af7f](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/e25af7f)), closes [#15](https://github.com/NathanWalker/nativescript-ngx-fonticon/issues/15)
+* allow no semi-colon ([fdbf961](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/fdbf961))
+* make it compatible with minified css ([598a3a7](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/598a3a7))
+* make it work with uppercase codes ([512c249](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/512c249))
+* publish with no .ts files ([9053443](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/9053443))
 
 
 ### Features
 
-* improve performance, also added addition fonticonPure pipe for optimal perf ([324f355](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/324f355))
 * **AoT:** Fix wrong dependencies in sample app ([c158a7c](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/c158a7c))
 * **AoT:** Make AoT work ([718e3d0](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/718e3d0)), closes [#15](https://github.com/NathanWalker/nativescript-ngx-fonticon/issues/15)
 * **TNSFontIconModule:** simpler config with module import ([9d4598d](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/9d4598d))
+* improve performance, also added addition fonticonPure pipe for optimal perf ([324f355](https://github.com/NathanWalker/nativescript-ngx-fonticon/commit/324f355))
 
 
 
