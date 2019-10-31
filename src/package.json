@@ -1,6 +1,6 @@
 {
   "name": "nativescript-ngx-fonticon",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Use custom font icon collections seamlessly with NativeScript for Angular.",
   "main": "nativescript-ngx-fonticon",
   "module": "nativescript-ngx-fonticon.js",
@@ -59,24 +59,24 @@
     "version-and-push": "git push origin && git push origin --tags && git push && npm publish"
   },
   "devDependencies": {
-    "@angular/common": "~6.0.0",
-    "@angular/compiler": "~6.0.0",
-    "@angular/compiler-cli": "~6.0.0",
-    "@angular/core": "~6.0.0",
-    "@angular/forms": "~6.0.0",
-    "@angular/http": "~6.0.0",
-    "@angular/platform-browser": "~6.0.0",
-    "@angular/platform-browser-dynamic": "~6.0.0",
-    "@angular/router": "~6.0.0",
+    "@angular/common": "~8.2.0",
+    "@angular/compiler": "~8.2.0",
+    "@angular/compiler-cli": "~8.2.0",
+    "@angular/core": "~8.2.0",
+    "@angular/forms": "~8.2.0",
+    "@angular/http": "~7.2.15",
+    "@angular/platform-browser": "~8.2.0",
+    "@angular/platform-browser-dynamic": "~8.2.0",
+    "@angular/router": "~8.2.0",
     "conventional-changelog-cli": "1.3.22",
-    "nativescript-angular": "~6.0.0-rc.0",
-    "reflect-metadata": "0.1.12",
+    "nativescript-angular": "~8.2.0",
+    "reflect-metadata": "~0.1.13",
     "rimraf": "^2.5.1",
-    "rxjs": "~6.1.0",
-    "tns-core-modules": "~4.0.0",
+    "rxjs": "~6.5.0",
+    "tns-core-modules": "~6.1.2",
     "traceur": "0.0.111",
     "typedoc": "^0.15.0",
-    "typescript": "2.7.2",
-    "zone.js": "~0.8.26"
+    "typescript": "~3.5.3",
+    "zone.js": "~0.10.1"
   }
 }

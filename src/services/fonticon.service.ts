@@ -11,9 +11,9 @@ export const USE_STORE = new InjectionToken("USE_STORE");
 
 @Injectable()
 export class TNSFontIconService {
-  public static debug: boolean = false;
-  public filesLoaded: BehaviorSubject<any>;
-  public css: any = {}; // font icon collections containing maps of classnames to unicode
+  static debug: boolean = false;
+  filesLoaded: BehaviorSubject<any>;
+  css: any = {}; // font icon collections containing maps of classnames to unicode
   private _currentName: string; // current collection name
 
   constructor(@Inject(USE_STORE) private config: any) {
@@ -21,7 +21,7 @@ export class TNSFontIconService {
     this.loadCss();
   }
 
-  public loadCss(): void {
+  loadCss() {
     let cnt = 0;
     let fontIconCollections = Object.keys(this.config);
     if (TNSFontIconService.debug) {
@@ -67,7 +67,7 @@ export class TNSFontIconService {
   // Instead, initialize the config data with a key value pair where
   // the file data is in the value, so all we need to do is parse the
   // file data.
-  private loadCssData(configKey): Promise<any> {
+  loadCssData(configKey): Promise<any> {
     if (TNSFontIconService.debug) {
       console.log("----------");
       console.log(
@@ -77,11 +77,10 @@ export class TNSFontIconService {
           configKey
       );
     }
-    let that = this;
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
       try {
-        var cssData = that.config[configKey];
-        that.mapCss(cssData);
+        var cssData = this.config[configKey];
+        this.mapCss(cssData);
         resolve();
       } catch (e) {
         reject(e);
