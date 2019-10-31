@@ -68,33 +68,11 @@ Then modify the css file to isolate just the icon fonts needed. [Watch this vide
 
 - Import the `TNSFontIconModule` passing a configuration with the location to the `.css` file to `forRoot`:
 
-Use the classname prefix as the `key` and the css filename as the value relative to directory where your `main.ts` is, then `require` the css file.
-
-If you're using NS6+ or a default NS6 Angular Webpack config and your working directory looks something like this:
-
-```
-src
-├── _app-common.scss
-├── _app-variables.android.scss
-├── _app-variables.ios.scss
-├── _app-variables.scss
-├── app
-│   ├── app-routing.module.ts
-│   ├── app.component.html
-│   ├── app.component.scss
-│   ├── app.component.ts
-│   ├── app.module.ts
-│   ├── assets
-│   │   └── css
-│   │       └── fa-5.css
-│   └── utilities
-├── app.android.scss
-├── app.ios.scss
-├── main.ts
-└── package.json
-```
+Use the classname prefix as the `key` and the css filename as the value relative to directory where your `app.module.ts` is, then `require` the css file.
 
 ### NS6+ or out of the box NS Webpack config:
+
+Assuming you placed your css file in `src/app/assets/css/fa-5.css`:
 
 ```
 TNSFontIconModule.forRoot({ 'fa': require('~/app/assets/css/fa-5.css')})
@@ -102,7 +80,7 @@ TNSFontIconModule.forRoot({ 'fa': require('~/app/assets/css/fa-5.css')})
 
 ### Non-webpack:
 
-Note that the location of the file **relative to your app.module** (or whatever you are using as your root module) is what determines the path that require takes.
+Note that the location of the file **relative to your app.module** (or whatever you are using as your root module) is what determines the path that require takes. This assumes that assets is a sibling folder of `app.module.ts`.
 
 ```
 TNSFontIconModule.forRoot({ 'fa': require('./assets/css/fa-5.css')})
