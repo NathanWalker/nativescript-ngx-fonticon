@@ -78,7 +78,8 @@ Use the classname prefix as the `key` and the css filename as the value relative
 TNSFontIconModule.forRoot({ fa: require("~/app/assets/css/fa-5.css") });
 
 /* Non-webpack */
-// Note that the location of the file **relative to your app.module** (or whatever you are using as your root module) is what determines the path that require takes.
+// Note that the location of the file relative to your app.module
+// is what determines the path that require takes.
 // This assumes that assets is a sibling folder of `app.module.ts`.
 TNSFontIconModule.forRoot({ fa: require("./assets/css/fa-5.css") });
 ```
