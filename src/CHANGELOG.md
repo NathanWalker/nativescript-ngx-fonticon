@@ -1,4 +1,4 @@
-# [6.0.0](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v5.0.2...v6.0.0) (2020-03-02)
+# [7.0.0](https://github.com/NathanWalker/nativescript-ngx-fonticon/compare/v5.0.2...v7.0.0) (2020-03-02)
 
 
 
