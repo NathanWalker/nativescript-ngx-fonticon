@@ -21,7 +21,7 @@ export class TNSFontIconModule {
 
   constructor(fonticon: TNSFontIconService) {}
   
-  static forRoot(providedConfig: any = {}): ModuleWithProviders {
+  static forRoot(providedConfig: any = {}): ModuleWithProviders<TNSFontIconModule> {
     return {
       ngModule: TNSFontIconModule,
       providers: [
