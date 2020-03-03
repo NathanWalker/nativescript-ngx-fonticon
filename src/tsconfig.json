@@ -21,7 +21,7 @@
         }
     },
     "files": [
-        "nativescript-ngx-fonticon.ts"
+        "index.ts"
     ],
     "exclude": [
         "node_modules",

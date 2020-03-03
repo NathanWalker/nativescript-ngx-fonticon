@@ -2,14 +2,16 @@
 import { Injectable, Inject, InjectionToken } from "@angular/core";
 
 // nativescript
-import { knownFolders } from "file-system";
+import { knownFolders } from "@nativescript/core";
 
 // libs
 import { BehaviorSubject } from "rxjs";
 
-export const USE_STORE = new InjectionToken("USE_STORE");
+export const USE_STORE = new InjectionToken<any>("USE_STORE");
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TNSFontIconService {
   static debug: boolean = false;
   filesLoaded: BehaviorSubject<any>;
