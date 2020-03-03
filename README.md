@@ -68,7 +68,21 @@ Then modify the css file to isolate just the icon fonts needed. [Watch this vide
 
 - Import the `TNSFontIconModule` passing a configuration with the location to the `.css` file to `forRoot`:
 
-Use the classname prefix as the `key` and the css filename as the value relative to directory where your `main.ts` is.
+Use the classname prefix as the `key` and the css filename as the value relative to directory where your `app.module.ts` is, then `require` the css file.
+
+### Example configurations:
+
+```typescript
+/* NS out of the box webpack configuration or NS6+  */
+// Assuming you placed your css file in `src/app/assets/css/fa-5.css`:
+TNSFontIconModule.forRoot({ fa: require("~/app/assets/css/fa-5.css") });
+
+/* Non-webpack */
+// Note that the location of the file relative to your app.module
+// is what determines the path that require takes.
+// This assumes that assets is a sibling folder of `app.module.ts`.
+TNSFontIconModule.forRoot({ fa: require("./assets/css/fa-5.css") });
+```
 
 ```typescript
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
@@ -83,8 +97,12 @@ import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 	imports: [
 		NativeScriptModule,
 		TNSFontIconModule.forRoot({
-			'fa': require('./assets/font-awesome.css'),
-			'ion': require('./assets/ionicons.css')
+			'fa': require('~/app/assets/css/fa-5.css'),
+			'ion': require('~/app/assets/css/ionicons.css')
+			/*
+			For non webpack, assuming the assets folder is a sibling of app.module.ts:
+			'fa': require('./assets/css/fa-5.css')
+			*/
 		})
 	]
 })
@@ -109,7 +127,11 @@ TNSFontIconService.debug = true;
 	imports: [
 		NativeScriptModule,
 		TNSFontIconModule.forRoot({
-			'fa': require('./assets/font-awesome.css')
+			'fa': require('~/app/assets/css/fa-5.css')
+			/*
+			For non webpack, assuming the assets folder is a sibling of app.module.ts:
+			'fa': require('./assets/css/fa-5.css')
+			*/
 		})
 	]
 })
