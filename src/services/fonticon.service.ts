@@ -10,7 +10,7 @@ import { BehaviorSubject } from "rxjs";
 export const USE_STORE = new InjectionToken<any>("USE_STORE");
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class TNSFontIconService {
   static debug: boolean = false;
@@ -134,10 +134,7 @@ export class TNSFontIconService {
       if (pair[1]) {
         let value = cleanValue(pair[1]);
         for (let key of keys) {
-          key = key
-            .trim()
-            .slice(1)
-            .split(":before")[0];
+          key = key.trim().slice(1).split(":before")[0];
           this.css[this._currentName][key] = String.fromCharCode(
             parseInt(value.substring(2), 16)
           );

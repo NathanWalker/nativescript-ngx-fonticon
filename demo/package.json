@@ -13,8 +13,7 @@
     }
   },
   "scripts": {
-    "preclean": "npm i rimraf",
-    "clean": "rimraf node_modules lib hooks platforms target 'app/**/*.js' 'app/**/*.js.map'",
+    "clean": "npx rimraf node_modules lib hooks platforms target 'app/**/*.js' 'app/**/*.js.map'",
     "postclean": "npm install",
     "build": "npm run ns-bundle --android --build-app --clean && npm run ns-bundle --ios --build-app --clean",
     "ns-bundle": "ns-bundle",

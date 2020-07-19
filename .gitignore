@@ -70,3 +70,4 @@ demo/platforms/
 !test-main.js
 src/node_modules
 package-lock.json
+dist

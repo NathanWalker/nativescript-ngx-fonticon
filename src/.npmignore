@@ -49,6 +49,7 @@ Thumbs.db
 references.d.ts
 *.spec.*
 *.e2e.*
+CHANGELOG.md
 CONTRIBUTING.md
 karma.conf.js
 protractor.conf.js

@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
-        "noImplicitAny": false,
-        "module": "commonjs",
-        "target": "es5",
+        "target": "es2017",
+        "module": "esnext",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -11,24 +10,23 @@
         "noEmitHelpers": true,
         "noEmitOnError": true,
         "skipLibCheck": true,
+        "noImplicitAny": false,
         "lib": ["es2017", "dom"],
-        "baseUrl": ".",
-        "paths": {
-            "*": [
-            "./node_modules/tns-core-modules/*",
-            "./node_modules/*"
-            ]
-        }
+        "baseUrl": "."
     },
     "files": [
         "index.ts"
     ],
     "exclude": [
+        "dist",
         "node_modules",
         "bundles"
     ],
     "angularCompilerOptions": {
-        "strictMetadataEmit": true,
-        "skipTemplateCodegen": true
+      "genDir": ".",
+      "skipMetadataEmit": false,
+      "skipTemplateCodegen": true,
+      "strictMetadataEmit": true,
+      "enableIvy": true
     }
 }

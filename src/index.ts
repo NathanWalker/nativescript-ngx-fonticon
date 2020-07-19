@@ -1,3 +1,26 @@
-export { TNSFontIconPipe, TNSFontIconPurePipe } from './pipes/fonticon.pipe';
-export { TNSFontIconService, USE_STORE } from './services/fonticon.service';
-export { TNSFontIconModule } from './nativescript-ngx-fonticon';
+import { NgModule, ModuleWithProviders, Provider } from "@angular/core";
+import { TNSFontIconPipe, TNSFontIconPurePipe } from "./pipes/fonticon.pipe";
+import { TNSFontIconService, USE_STORE } from "./services/fonticon.service";
+
+export * from './pipes/fonticon.pipe';
+export * from './services/fonticon.service';
+
+@NgModule({
+  declarations: [TNSFontIconPipe, TNSFontIconPurePipe],
+  exports: [TNSFontIconPipe, TNSFontIconPurePipe],
+})
+export class TNSFontIconModule {
+  constructor(fonticon: TNSFontIconService) {}
+
+  static forRoot(
+    providedConfig: any = {}
+  ): ModuleWithProviders<TNSFontIconModule> {
+    return {
+      ngModule: TNSFontIconModule,
+      providers: [
+        { provide: USE_STORE, useValue: providedConfig },
+        TNSFontIconService,
+      ],
+    };
+  }
+}
