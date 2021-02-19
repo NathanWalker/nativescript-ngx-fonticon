@@ -97,8 +97,8 @@ import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 	imports: [
 		NativeScriptModule,
 		TNSFontIconModule.forRoot({
-			'fa': require('~/app/assets/css/fa-5.css'),
-			'ion': require('~/app/assets/css/ionicons.css')
+			'fa': require('~/app/assets/css/fa-5.css').default,
+			'ion': require('~/app/assets/css/ionicons.css').default
 			/*
 			For non webpack, assuming the assets folder is a sibling of app.module.ts:
 			'fa': require('./assets/css/fa-5.css')
@@ -127,10 +127,10 @@ TNSFontIconService.debug = true;
 	imports: [
 		NativeScriptModule,
 		TNSFontIconModule.forRoot({
-			'fa': require('~/app/assets/css/fa-5.css')
+			'fa': require('~/app/assets/css/fa-5.css').default
 			/*
 			For non webpack, assuming the assets folder is a sibling of app.module.ts:
-			'fa': require('./assets/css/fa-5.css')
+			'fa': require('./assets/css/fa-5.css').default
 			*/
 		})
 	]
