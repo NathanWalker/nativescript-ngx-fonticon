@@ -1,3 +1,5 @@
+This is now simply `nativescript-fonticon`. Same API, just removed `TNS` prefix naming, see here: https://github.com/nstudio/nativescript-ui-kit/blob/main/packages/nativescript-fonticon/README.md
+<hr/>
 ## A simpler way to use font icons with NativeScript + Angular.
 
 [![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
